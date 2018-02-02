@@ -14,6 +14,6 @@ Skeleton of participants module
 
 - Pablo Fernández Pérez (UO245015)
 - Gonzalo Collada Vázquez (UO252066)
--
+- Carlos Concheso Cubillas (UO237674)
 -
 
