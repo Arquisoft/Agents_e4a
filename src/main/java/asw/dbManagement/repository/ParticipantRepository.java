@@ -9,11 +9,12 @@ import asw.dbManagement.model.Participant;
 public interface ParticipantRepository extends JpaRepository<Participant, Long> {
 	
 	/**
-	 * Método que devuelve el Participante el cual es buscado por email
+	 * Método que devuelve el Participante el cual es buscado por identificador
 	 * en la base de datos
-	 * @param email del Partipante
-	 * @return El Participante con dicho email
+	 * @param identificador del Partipante
+	 * @return El Participante con dicho identificador
 	 */
-	public Participant findByEmail(String email);
+
+	public Participant findByIdentificador(String identificador);
 	
 }

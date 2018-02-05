@@ -4,66 +4,46 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
 import asw.dbManagement.model.Participant;
-import asw.participants.util.Utilidades;
 
 @XmlRootElement(name = "participant")
 public class RespuestaInfoREST {	
 	
-	private String firstName;
-	private String lastName;
-	private int edad;
-	private String ID;
+	private String name;
+	private String location;
 	private String email;
+	private String id;
+	private String kind;
+	private int kindCode;
 	
 	public RespuestaInfoREST() {}
 	
 	public RespuestaInfoREST(Participant participant){
-		setFirstName(participant.getNombre());
-		setLastName(participant.getApellidos());
-		setEdad(Utilidades.getEdad(participant.getFechaNacimiento()));
-		setID(participant.getDNI());
+		setName(participant.getNombre());
+		setLocation(participant.getLocalizacion());
 		setEmail(participant.getEmail());
-//		this.firstName = participant.getNombre();
-//		this.lastName = participant.getApellidos();
-//		this.edad = Utilidades.getEdad(participant.getFechaNacimiento());
-//		this.ID = participant.getDNI();
-//		this.email = participant.getEmail();
+		setId(participant.getIdentificador());
+		setKind(participant.getTipo());
+		setKindCode(participant.getTipoCode());
 	}
 
-	public String getFirstName() {
-		return firstName;
-	}
 
-	@XmlElement
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
-	}
 
-	public String getLastName() {
-		return lastName;
+	public String getNombre() {
+		return name;
 	}
 
 	@XmlElement
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
+	public void setName(String name) {
+		this.name = name;
 	}
 
-	public int getEdad() {
-		return edad;
-	}
-
-	@XmlElement
-	public void setEdad(int edad) {
-		this.edad = edad;
-	}
-
-	public String getID() {
-		return ID;
+	public String getLocation() {
+		return location;
 	}
 
 	@XmlElement
-	public void setID(String iD) {
-		ID = iD;
+	public void setLocation(String location) {
+		this.location = location;
 	}
 
 	public String getEmail() {
@@ -73,6 +53,33 @@ public class RespuestaInfoREST {
 	@XmlElement
 	public void setEmail(String email) {
 		this.email = email;
+	}
+	
+	public String getId() {
+		return id;
+	}
+
+	@XmlElement
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	public String getKind() {
+		return kind;
+	}
+
+	@XmlElement
+	public void setKind(String kind) {
+		this.kind = kind;
+	}
+
+	public int getKindCode() {
+		return kindCode;
+	}
+
+	@XmlElement
+	public void setKindCode(int kindCode) {
+		this.kindCode = kindCode;
 	}
 
 }

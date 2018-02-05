@@ -74,4 +74,26 @@ public class Assert {
 		}
 		return true;
 	}
+
+	public static boolean isLoginEmpty(String login) {
+		if(login.trim().isEmpty())
+			throw ErrorFactory.getError(Errors.REQUIRED_LOGIN);
+		else
+			return false;
+	}
+
+	public static boolean isKindEmpty(String kind) {
+		if(kind.trim().isEmpty())
+			throw ErrorFactory.getError(Errors.REQUIRED_KIND);
+		else
+			return false;
+		
+	}
+
+	public static boolean isKindCorrect(String kind,Participant participant){
+		if (!kind.equals(participant.getTipo())) {
+			throw ErrorFactory.getError(Errors.INCORRECT_KIND_DO_NOT_MATCH);
+		}
+		return true;
+	}
 }

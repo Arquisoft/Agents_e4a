@@ -29,15 +29,17 @@ public class GetParticipantInfoRESTController implements GetParticipantInfo {
 			"Accept=application/xml" }, produces = { "application/json", "text/xml" })
 	public ResponseEntity<RespuestaInfoREST> getPOSTpetition(@RequestBody(required = true) PeticionInfoREST peticion) {
 
-		Assert.isEmailEmpty(peticion.getLogin());
-		Assert.isEmailValid(peticion.getLogin());
+		Assert.isLoginEmpty(peticion.getLogin());
 		Assert.isPasswordEmpty(peticion.getPassword());
+		Assert.isKindEmpty(peticion.getKind());
 
 		Participant participant = getParticipant.getParticipant(peticion.getLogin());
 
 		Assert.isParticipantNull(participant);
 
 		Assert.isPasswordCorrect(peticion.getPassword(), participant);
+		Assert.isKindCorrect(peticion.getKind(), participant);
+
 
 		/*
 		 * Añadimos la información al modelo, para que se muestre en la pagina

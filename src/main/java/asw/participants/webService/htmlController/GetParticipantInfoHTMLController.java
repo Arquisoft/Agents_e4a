@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import asw.dbManagement.GetParticipant;
 import asw.dbManagement.model.Participant;
 import asw.participants.util.Assert;
-import asw.participants.util.Utilidades;
 import asw.participants.webService.responses.errors.ErrorResponse;
 
 @Controller
@@ -30,30 +29,22 @@ public class GetParticipantInfoHTMLController {
 	}
 
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
-	public String getLogin(HttpSession session, @RequestParam String email, @RequestParam String password,
+	public String getLogin(HttpSession session, @RequestParam String login, @RequestParam String password, @RequestParam String kind,
 			Model model) {
 
-		Assert.isEmailEmpty(email);
-		Assert.isEmailValid(email);
+		Assert.isLoginEmpty(login);
 		Assert.isPasswordEmpty(password);
+		Assert.isKindEmpty(kind);
 
-		Participant participant = getParticipant.getParticipant(email);
+		Participant participant = getParticipant.getParticipant(login);
 
 		Assert.isParticipantNull(participant);
 		Assert.isPasswordCorrect(password, participant);
+		Assert.isKindCorrect(kind, participant);
 
 		session.setAttribute("participant", participant);
 
-		if (!participant.isAdmin() && !participant.isPolitician()) {
-			session.setAttribute("edad", Utilidades.getEdad(participant.getFechaNacimiento()));
-			return "datosParticipant";
-		} else{
-			if(participant.isAdmin())
-				return "dashboardAdmin";
-			else
-				return "dashboardPolitician";
-		}
-
+		return "datosParticipant";
 	}
 
 	@ExceptionHandler(ErrorResponse.class)
