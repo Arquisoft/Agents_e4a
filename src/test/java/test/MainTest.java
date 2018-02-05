@@ -48,7 +48,7 @@ import asw.participants.webService.request.PeticionInfoREST;
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class MainTest {
 
-	/*@Value("${local.server.port}")
+	@Value("${local.server.port}")
 	private int port;
 
 	private URL base;
@@ -62,7 +62,7 @@ public class MainTest {
 		this.base = new URL("http://localhost:" + port + "/");
 		template = new TestRestTemplate();
 	}
-
+/*
 	@Test
 	public void T1domainModelEqualsTest() {
 		Participant participant1 = getParticipant.getParticipant("paco@hotmail.com");
@@ -515,7 +515,7 @@ public class MainTest {
 		response = template.postForEntity(userURI, new PeticionChangeEmailREST("fhfyg@hotmail.com", "123456", "carmen@yahoo.com"),
 				String.class);
 		assertThat(response.getBody(), equalTo(correctChange));
-	}
+	}*/
 
 	// Cabecera HTTP para pedir respuesta en XML
 	public class AcceptInterceptor implements ClientHttpRequestInterceptor {
@@ -526,5 +526,5 @@ public class MainTest {
 			headers.setAccept(Arrays.asList(MediaType.APPLICATION_XML));
 			return execution.execute(request, body);
 		}
-	}*/
+	}
 }
