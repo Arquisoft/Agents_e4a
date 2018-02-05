@@ -62,20 +62,18 @@ public class MainTest {
 		this.base = new URL("http://localhost:" + port + "/");
 		template = new TestRestTemplate();
 	}
-/*
+
 	@Test
 	public void T1domainModelEqualsTest() {
 		Participant participant1 = getParticipant.getParticipant("paco@hotmail.com");
-		Participant participant2 = getParticipant.getParticipant("pac@hotmail.com");
-		Participant participant3 = getParticipant.getParticipant("paco@hotmail.com");
-		Participant participant4 = getParticipant.getParticipant("pepe@gmail.com");
+		Participant participant2 = getParticipant.getParticipant("13864928P");
+		Participant participant3 = getParticipant.getParticipant("13864928P");
 		assertFalse(participant1.equals(participant2));
 		assertFalse(participant1.equals(4));
 		assertTrue(participant1.equals(participant3));
 		assertTrue(participant1.equals(participant1));
-		assertFalse(participant1.equals(participant4));
 	}
-
+	/*
 	@Test
 	public void T2domainModelToString() {
 		Participant participant1 = getParticipant.getParticipant("paco@hotmail.com");
