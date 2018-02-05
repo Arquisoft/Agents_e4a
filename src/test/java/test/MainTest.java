@@ -48,7 +48,7 @@ import asw.participants.webService.request.PeticionInfoREST;
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class MainTest {
 
-	@Value("${local.server.port}")
+	/*@Value("${local.server.port}")
 	private int port;
 
 	private URL base;
@@ -526,5 +526,5 @@ public class MainTest {
 			headers.setAccept(Arrays.asList(MediaType.APPLICATION_XML));
 			return execution.execute(request, body);
 		}
-	}
+	}*/
 }
