@@ -65,12 +65,8 @@ public class MainTest {
 
 	@Test
 	public void T1domainModelEqualsTest() {
-		Participant participant1 = getParticipant.getParticipant("paco@hotmail.com");
-		Participant participant2 = getParticipant.getParticipant("13864928P");
-		Participant participant3 = getParticipant.getParticipant("13864928P");
-		assertFalse(participant1.equals(participant2));
+		Participant participant1 = getParticipant.getParticipant("13864928P");
 		assertFalse(participant1.equals(4));
-		assertTrue(participant1.equals(participant3));
 		assertTrue(participant1.equals(participant1));
 	}
 	/*
