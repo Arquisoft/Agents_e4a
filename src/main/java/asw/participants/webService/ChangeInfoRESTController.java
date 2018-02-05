@@ -32,25 +32,24 @@ public class ChangeInfoRESTController implements ChangeInfo {
 	@RequestMapping(value = "/changePassword", method = RequestMethod.POST, headers = { "Accept=application/json",
 			"Accept=application/xml" }, produces = { "application/json", "text/xml" })
 	public ResponseEntity<RespuestaChangeInfoREST> changePassword(@RequestBody(required=true) PeticionChangePasswordREST datos) {
-		String email = datos.getEmail();
+		String login = datos.getLogin();
 		String password = datos.getPassword();
 		String newPassword = datos.getNewPassword();
 		
-		Assert.isEmailEmpty(email);
-		Assert.isEmailValid(email);
+		Assert.isLoginEmpty(login);
 		
 		Assert.isPasswordEmpty(password);
 		Assert.isPasswordEmpty(newPassword);
 		
 		Assert.isSamePassword(password, newPassword);	
 
-		Participant p = getParticipant.getParticipant(email);
+		Participant p = getParticipant.getParticipant(login);
 		Assert.isParticipantNull(p);
 		Assert.isPasswordCorrect(password, p);
 
 		updateInfo.updatePassword(p, password, newPassword);
 
-		RespuestaChangeInfoREST res = new RespuestaChangeInfoREST(email, "contraseña actualizada correctamente");
+		RespuestaChangeInfoREST res = new RespuestaChangeInfoREST(login, "contraseña actualizada correctamente");
 		return new ResponseEntity<RespuestaChangeInfoREST>(res, HttpStatus.OK);
 	}
 

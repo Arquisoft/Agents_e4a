@@ -10,7 +10,7 @@ public interface ChangeInfo {
 	/**
 	 * Cambio de contraseña
 	 *
-	 * @param datos requeridos (email, password, newPassword)
+	 * @param datos requeridos (login, password, newPassword)
 	 * @return 
 	 */
 	public ResponseEntity<RespuestaChangeInfoREST> changePassword(PeticionChangePasswordREST datos);
