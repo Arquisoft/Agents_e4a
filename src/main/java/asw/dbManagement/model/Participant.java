@@ -19,7 +19,7 @@ public class Participant {
 	// Atributos del participante
 		private String nombre;
 		private String localizacion;
-		@Column(unique = true)
+		@Column(nullable = false)
 		private String email;
 		@Column(unique = true)
 		private String identificador;
