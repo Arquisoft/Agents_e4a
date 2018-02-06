@@ -142,7 +142,7 @@ public class Agent {
 
 		@Override
 		public String toString() {
-			return "Participant [nombre=" + nombre + ", localizacion=" + localizacion + ", email=" + email
+			return "Agent [nombre=" + nombre + ", localizacion=" + localizacion + ", email=" + email
 					+ ", identificador=" + identificador + ", tipo=" + tipo + ", tipoCode=" + tipoCode + ", password="
 					+ password + "]";
 		}

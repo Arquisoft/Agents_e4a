@@ -69,17 +69,18 @@ public class MainTest {
 		assertFalse(participant1.equals(4));
 		assertTrue(participant1.equals(participant1));
 	}
-	/*
+	
 	@Test
 	public void T2domainModelToString() {
-		Participant participant1 = getParticipant.getParticipant("paco@hotmail.com");
+		Agent participant1 = getParticipant.getAgent("13864928P");
 		assertEquals(participant1.toString(),
-				"Participant [nombre=" + participant1.getNombre() + ", apellidos=" + participant1.getApellidos()
-						+ ", fechaNacimiento=" + participant1.getFechaNacimiento() + ", email="
-						+ participant1.getEmail() + ", DNI=" + participant1.getDNI() + ", direccion="
-						+ participant1.getDireccion() + ", nacionalidad=" + participant1.getNacionalidad() + ", isAdmin=false, isPolitician=false]");
+				"Agent [nombre=" + participant1.getNombre() + ", localizacion=" + participant1.getLocalizacion()
+						+ ", email=" + participant1.getEmail() + ", identificador="
+						+ participant1.getIdentificador() + ", tipo=" + participant1.getTipo() + ", tipoCode="
+						+ participant1.getTipoCode() + ", password=" + participant1.getPassword() + "]");
 	}
 
+/*
 	@Test
 	public void T3domainModelHashCodeTest() {
 		Participant participant1 = getParticipant.getParticipant("paco@hotmail.com");
