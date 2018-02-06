@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import asw.dbManagement.GetParticipant;
+import asw.dbManagement.GetAgent;
 import asw.dbManagement.UpdateInfo;
 import asw.dbManagement.model.Agent;
 import asw.participants.ChangeInfo;
@@ -26,7 +26,7 @@ import asw.participants.webService.responses.errors.ErrorResponse;
 public class ChangeInfoRESTController implements ChangeInfo {
 
 	@Autowired
-	private GetParticipant getParticipant;
+	private GetAgent getParticipant;
 	@Autowired
 	private UpdateInfo updateInfo;
 
@@ -45,7 +45,7 @@ public class ChangeInfoRESTController implements ChangeInfo {
 		
 		Assert.isSamePassword(password, newPassword);	
 
-		Agent p = getParticipant.getParticipant(login);
+		Agent p = getParticipant.getAgent(login);
 		Assert.isParticipantNull(p);
 		Assert.isPasswordCorrect(password, p);
 
@@ -73,7 +73,7 @@ public class ChangeInfoRESTController implements ChangeInfo {
 
 		Assert.isPasswordEmpty(password);
 		
-		Agent p = getParticipant.getParticipant(email);
+		Agent p = getParticipant.getAgent(email);
 		Assert.isParticipantNull(p);
 		Assert.isPasswordCorrect(password, p);
 		
@@ -105,7 +105,7 @@ public class ChangeInfoRESTController implements ChangeInfo {
 
 		Assert.isPasswordEmpty(password);
 		
-		Agent p = getParticipant.getParticipant(nombre);
+		Agent p = getParticipant.getAgent(nombre);
 		Assert.isParticipantNull(p);
 		Assert.isPasswordCorrect(password, p);
 		
@@ -131,7 +131,7 @@ public class ChangeInfoRESTController implements ChangeInfo {
 
 		Assert.isPasswordEmpty(password);
 		
-		Agent p = getParticipant.getParticipant(localizacion);
+		Agent p = getParticipant.getAgent(localizacion);
 		Assert.isParticipantNull(p);
 		Assert.isPasswordCorrect(password, p);
 		

@@ -34,7 +34,7 @@ import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.web.client.RestTemplate;
 
 import asw.Application;
-import asw.dbManagement.GetParticipant;
+import asw.dbManagement.GetAgent;
 import asw.dbManagement.model.Agent;
 import asw.participants.webService.request.PeticionChangeEmailREST;
 import asw.participants.webService.request.PeticionChangePasswordREST;
@@ -55,7 +55,7 @@ public class MainTest {
 	private RestTemplate template;
 
 	@Autowired
-	private GetParticipant getParticipant;
+	private GetAgent getParticipant;
 
 	@Before
 	public void setUp() throws Exception {
@@ -65,7 +65,7 @@ public class MainTest {
 
 	@Test
 	public void T1domainModelEqualsTest() {
-		Agent participant1 = getParticipant.getParticipant("13864928P");
+		Agent participant1 = getParticipant.getAgent("13864928P");
 		assertFalse(participant1.equals(4));
 		assertTrue(participant1.equals(participant1));
 	}

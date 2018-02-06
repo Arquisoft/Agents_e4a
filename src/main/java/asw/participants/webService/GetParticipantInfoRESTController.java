@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import asw.dbManagement.GetParticipant;
+import asw.dbManagement.GetAgent;
 import asw.dbManagement.model.Agent;
 import asw.participants.GetParticipantInfo;
 import asw.participants.util.Assert;
@@ -22,7 +22,7 @@ import asw.participants.webService.responses.errors.ErrorResponse;
 public class GetParticipantInfoRESTController implements GetParticipantInfo {
 
 	@Autowired
-	private GetParticipant getParticipant;
+	private GetAgent getParticipant;
 
 	@Override
 	@RequestMapping(value = "/user", method = RequestMethod.POST, headers = { "Accept=application/json",
@@ -33,7 +33,7 @@ public class GetParticipantInfoRESTController implements GetParticipantInfo {
 		Assert.isPasswordEmpty(peticion.getPassword());
 		Assert.isKindEmpty(peticion.getKind());
 
-		Agent participant = getParticipant.getParticipant(peticion.getLogin());
+		Agent participant = getParticipant.getAgent(peticion.getLogin());
 
 		Assert.isParticipantNull(participant);
 

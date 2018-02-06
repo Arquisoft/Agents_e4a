@@ -5,15 +5,15 @@ import org.springframework.stereotype.Service;
 
 import asw.dbManagement.UpdateInfo;
 import asw.dbManagement.model.Agent;
-import asw.dbManagement.repository.ParticipantRepository;
+import asw.dbManagement.repository.AgentRepository;
 
 @Service
 public class UpdateInfoImpl implements UpdateInfo {
 
-	private ParticipantRepository repository;
+	private AgentRepository repository;
 	
 	@Autowired
-	public UpdateInfoImpl(ParticipantRepository repository) {
+	public UpdateInfoImpl(AgentRepository repository) {
 		this.repository = repository;
 	}
 	
