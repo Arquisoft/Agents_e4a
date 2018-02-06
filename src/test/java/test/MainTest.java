@@ -121,24 +121,25 @@ public class MainTest {
 
 	}
 
-	/*
+	
 	@Test
 	public void T6incorrectPassword() {
 		ResponseEntity<String> response = template.getForEntity(base.toString(), String.class);
 		String userURI = base.toString() + "/user";
 		String incorrectPassword = "{\"reason\": \"Password do not match\"}";
-		response = template.postForEntity(userURI, new PeticionInfoREST("paco@hotmail.com", "12356"), String.class);
+		response = template.postForEntity(userURI, new PeticionInfoREST("13864928P", "654321", "Person"), String.class);
 		assertThat(response.getBody(), equalTo(incorrectPassword));
 
-		response = template.postForEntity(userURI, new PeticionInfoREST("pepe@gmail.com", "12346"), String.class);
+		response = template.postForEntity(userURI, new PeticionInfoREST("87654321B", "654321", "Person"), String.class);
 		assertThat(response.getBody(), equalTo(incorrectPassword));
 
-		response = template.postForEntity(userURI, new PeticionInfoREST("carmen@yahoo.com", "13456"), String.class);
+		response = template.postForEntity(userURI, new PeticionInfoREST("11223344C", "654321", "Person"), String.class);
 		assertThat(response.getBody(), equalTo(incorrectPassword));
 
-		response = template.postForEntity(userURI, new PeticionInfoREST("isabel@gmail.com", "23456"), String.class);
-		assertThat(response.getBody(), equalTo(incorrectPassword));
+		
 	}
+	
+	/*
 
 	@Test
 	public void T7emptyEmail() {
