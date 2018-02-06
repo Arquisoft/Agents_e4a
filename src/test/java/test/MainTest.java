@@ -94,9 +94,9 @@ public class MainTest {
 		ResponseEntity<String> response = template.getForEntity(base.toString(), String.class);
 		String userURI = base.toString() + "/user";
 
-		response = template.postForEntity(userURI, new PeticionInfoREST("paco@hotmail.com", "123456", "Person"), String.class);
+		response = template.postForEntity(userURI, new PeticionInfoREST("13864928P", "123456", "Person"), String.class);
 		assertThat(response.getBody(), equalTo(
-				"{\"firstName\":\"Paco\",\"lastName\":\"Gómez\",\"edad\":47,\"email\":\"paco@hotmail.com\",\"id\":\"12345678A\"}"));
+				"{\"location\":\"-3.7339100,40.4416800\",\"email\":\"paco@hotmail.com\",\"id\":\"13864928P\",\"kind\":\"Person\",\"kindCode\":1,\"nombre\":\"Paco Gómez\"}"));
 	}
 
 		/*
