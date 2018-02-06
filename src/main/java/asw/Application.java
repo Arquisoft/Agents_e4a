@@ -29,6 +29,14 @@ public class Application {
 			// Inserción en la base de datos
 			repository.save(new Agent("Paco Gómez", "-3.7339100,40.4416800","paco@hotmail.com", "13864928P",
 					"Person", 1, "123456"));
+			
+			// Inserción en la base de datos
+			repository.save(new Agent("Pepe Fernández", "1.7339100,26.4416800", "pepe@gmail.com", "87654321B",
+					"Person", 1, "123456"));
+
+			// Inserción en la base de datos
+			repository.save(new Agent("Carmen López", "5.7339100,48.4416800", "carmen@yahoo.com", "11223344C",
+					"Person", 1, "123456"));
 
 		};
 	}

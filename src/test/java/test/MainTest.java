@@ -90,40 +90,38 @@ public class MainTest {
 
 	
 	@Test
-	public void T4participantExistAndCorrectPasssword() {
+	public void T4agentExistAndCorrectPasssword() {
 		ResponseEntity<String> response = template.getForEntity(base.toString(), String.class);
 		String userURI = base.toString() + "/user";
 
 		response = template.postForEntity(userURI, new PeticionInfoREST("13864928P", "123456", "Person"), String.class);
 		assertThat(response.getBody(), equalTo(
 				"{\"location\":\"-3.7339100,40.4416800\",\"email\":\"paco@hotmail.com\",\"id\":\"13864928P\",\"kind\":\"Person\",\"kindCode\":1,\"nombre\":\"Paco Gómez\"}"));
+	
+	
+		response = template.postForEntity(userURI, new PeticionInfoREST("87654321B", "123456", "Person"), String.class);
+		assertThat(response.getBody(), equalTo(
+				"{\"location\":\"1.7339100,26.4416800\",\"email\":\"pepe@gmail.com\",\"id\":\"87654321B\",\"kind\":\"Person\",\"kindCode\":1,\"nombre\":\"Pepe Fernández\"}"));
+
+		response = template.postForEntity(userURI, new PeticionInfoREST("11223344C", "123456", "Person"), String.class);
+		assertThat(response.getBody(), equalTo(
+				"{\"location\":\"5.7339100,48.4416800\",\"email\":\"carmen@yahoo.com\",\"id\":\"11223344C\",\"kind\":\"Person\",\"kindCode\":1,\"nombre\":\"Carmen López\"}"));
 	}
 
-		/*
-		response = template.postForEntity(userURI, new PeticionInfoREST("pepe@gmail.com", "123456"), String.class);
-		assertThat(response.getBody(), equalTo(
-				"{\"firstName\":\"Pepe\",\"lastName\":\"Fernández\",\"edad\":42,\"email\":\"pepe@gmail.com\",\"id\":\"87654321B\"}"));
-
-		response = template.postForEntity(userURI, new PeticionInfoREST("carmen@yahoo.com", "123456"), String.class);
-		assertThat(response.getBody(), equalTo(
-				"{\"firstName\":\"Carmen\",\"lastName\":\"López\",\"edad\":47,\"email\":\"carmen@yahoo.com\",\"id\":\"11223344C\"}"));
-	}
-
-	/*
+	
 	@Test
 	public void T5participantDoNotExist() {
 		ResponseEntity<String> response = template.getForEntity(base.toString(), String.class);
 		String userURI = base.toString() + "/user";
 		String userNotFound = "{\"reason\": \"User not found\"}";
 
-		response = template.postForEntity(userURI, new PeticionInfoREST("ofelia@hotmail.com", "ajksdkje"),
+		response = template.postForEntity(userURI, new PeticionInfoREST("13121312A", "000000", "Person"),
 				String.class);
 		assertThat(response.getBody(), equalTo(userNotFound));
 
-		response = template.postForEntity(userURI, new PeticionInfoREST("martin@hotmail.com", "shcxhqw"), String.class);
-		assertThat(response.getBody(), equalTo(userNotFound));
 	}
 
+	/*
 	@Test
 	public void T6incorrectPassword() {
 		ResponseEntity<String> response = template.getForEntity(base.toString(), String.class);
