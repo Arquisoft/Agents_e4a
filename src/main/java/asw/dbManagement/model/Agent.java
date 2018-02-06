@@ -8,7 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "Participant")
+@Table(name = "Agent")
 public class Agent {
 
 	// Id generado automáticamente para diferenciar cada uno (para mapear)
@@ -19,10 +19,8 @@ public class Agent {
 	// Atributos del participante
 		private String nombre;
 		private String localizacion;
-		@Column(nullable = false)
-		private String email;
-		@Column(unique = true)
-		private String identificador;
+		@Column(nullable = false) private String email;
+		@Column(unique = true) private String identificador;
 		private String tipo;
 		private int tipoCode;
 		private String password;

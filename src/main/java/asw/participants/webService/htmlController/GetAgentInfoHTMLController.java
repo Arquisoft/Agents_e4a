@@ -18,7 +18,7 @@ import asw.participants.util.Assert;
 import asw.participants.webService.responses.errors.ErrorResponse;
 
 @Controller
-public class GetParticipantInfoHTMLController {
+public class GetAgentInfoHTMLController {
 
 	@Autowired
 	private GetAgent getParticipant;

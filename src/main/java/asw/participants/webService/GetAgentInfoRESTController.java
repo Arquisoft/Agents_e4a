@@ -12,14 +12,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 import asw.dbManagement.GetAgent;
 import asw.dbManagement.model.Agent;
-import asw.participants.GetParticipantInfo;
+import asw.participants.GetAgentInfo;
 import asw.participants.util.Assert;
 import asw.participants.webService.request.PeticionInfoREST;
 import asw.participants.webService.responses.RespuestaInfoREST;
 import asw.participants.webService.responses.errors.ErrorResponse;
 
 @RestController
-public class GetParticipantInfoRESTController implements GetParticipantInfo {
+public class GetAgentInfoRESTController implements GetAgentInfo {
 
 	@Autowired
 	private GetAgent getParticipant;
