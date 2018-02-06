@@ -55,7 +55,7 @@ public class MainTest {
 	private RestTemplate template;
 
 	@Autowired
-	private GetAgent getParticipant;
+	private GetAgent getAgent;
 
 	@Before
 	public void setUp() throws Exception {
@@ -65,14 +65,14 @@ public class MainTest {
 
 	@Test
 	public void T1domainModelEqualsTest() {
-		Agent participant1 = getParticipant.getAgent("13864928P");
+		Agent participant1 = getAgent.getAgent("13864928P");
 		assertFalse(participant1.equals(4));
 		assertTrue(participant1.equals(participant1));
 	}
 	
 	@Test
 	public void T2domainModelToString() {
-		Agent participant1 = getParticipant.getAgent("13864928P");
+		Agent participant1 = getAgent.getAgent("13864928P");
 		assertEquals(participant1.toString(),
 				"Agent [nombre=" + participant1.getNombre() + ", localizacion=" + participant1.getLocalizacion()
 						+ ", email=" + participant1.getEmail() + ", identificador="
@@ -83,8 +83,8 @@ public class MainTest {
 
 	@Test
 	public void T3domainModelHashCodeTest() {
-		Agent participant1 = getParticipant.getAgent("13864928P");
-		Agent participant3 = getParticipant.getAgent("13864928P");
+		Agent participant1 = getAgent.getAgent("13864928P");
+		Agent participant3 = getAgent.getAgent("13864928P");
 		assertEquals(participant1.hashCode(), participant3.hashCode());
 	}
 

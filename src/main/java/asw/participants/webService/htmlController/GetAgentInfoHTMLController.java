@@ -21,7 +21,7 @@ import asw.participants.webService.responses.errors.ErrorResponse;
 public class GetAgentInfoHTMLController {
 
 	@Autowired
-	private GetAgent getParticipant;
+	private GetAgent getAgent;
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String inicalicerLogin(Model model) {
@@ -36,7 +36,7 @@ public class GetAgentInfoHTMLController {
 		Assert.isPasswordEmpty(password);
 		Assert.isKindEmpty(kind);
 
-		Agent participant = getParticipant.getAgent(login);
+		Agent participant = getAgent.getAgent(login);
 
 		Assert.isParticipantNull(participant);
 		Assert.isPasswordCorrect(password, participant);
