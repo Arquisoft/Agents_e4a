@@ -95,6 +95,14 @@ public class Assert {
 		else
 			return false;
 	}
+	
+	public static boolean isLocalizacionEmpty(String localizacion) {
+		if(localizacion.trim().isEmpty())
+			throw ErrorFactory.getError(Errors.REQUIRED_LOCALIZACION);
+		else
+			return false;
+		
+	}
 
 	public static boolean isKindEmpty(String kind) {
 		if(kind.trim().isEmpty())
@@ -110,4 +118,13 @@ public class Assert {
 		}
 		return true;
 	}
+
+	public static boolean isSameLocalizacion(String localizacion, String nuevaLocalizacion) {
+		if (localizacion.equals(nuevaLocalizacion)) {
+			throw ErrorFactory.getError(Errors.SAME_LOCALIZACION);
+		}
+		return true;
+		
+	}
+
 }

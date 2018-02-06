@@ -6,10 +6,12 @@ import asw.participants.webService.responses.errors.KindDoNotMatchErrorResponse;
 import asw.participants.webService.responses.errors.PasswordDoNotMatchErrorResponse;
 import asw.participants.webService.responses.errors.RequiredEmailErrorResponse;
 import asw.participants.webService.responses.errors.RequiredKindErrorResponse;
+import asw.participants.webService.responses.errors.RequiredLocalizacionErrorResponse;
 import asw.participants.webService.responses.errors.RequiredLoginErrorResponse;
 import asw.participants.webService.responses.errors.RequiredNombreErrorResponse;
 import asw.participants.webService.responses.errors.RequiredPasswordErrorResponse;
 import asw.participants.webService.responses.errors.SameEmailErrorResponse;
+import asw.participants.webService.responses.errors.SameLocalizacionErrorResponse;
 import asw.participants.webService.responses.errors.SameNombreErrorResponse;
 import asw.participants.webService.responses.errors.UnknownErrorResponse;
 import asw.participants.webService.responses.errors.UserNotFoundResponse;
@@ -30,7 +32,9 @@ public class ErrorFactory {
 		REQUIRED_KIND,
 		INCORRECT_KIND_DO_NOT_MATCH,
 		REQUIRED_NOMBRE,
-		SAME_NOMBRE
+		SAME_NOMBRE,
+		REQUIRED_LOCALIZACION,
+		SAME_LOCALIZACION
 	}
 
 	// Generar Constructor privado no queremos que se pueda tener varias
@@ -64,6 +68,10 @@ public class ErrorFactory {
 			return new RequiredNombreErrorResponse();
 		case SAME_NOMBRE:
 			return new SameNombreErrorResponse();
+		case REQUIRED_LOCALIZACION:
+			return new RequiredLocalizacionErrorResponse();
+		case SAME_LOCALIZACION:
+			return new SameLocalizacionErrorResponse();	
 		default:// en caso de no conocer el error.
 			return new UnknownErrorResponse();
 		}

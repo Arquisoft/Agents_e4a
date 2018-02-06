@@ -3,6 +3,7 @@ package asw.participants;
 import org.springframework.http.ResponseEntity;
 
 import asw.participants.webService.request.PeticionChangeEmailREST;
+import asw.participants.webService.request.PeticionChangeLocalizacionREST;
 import asw.participants.webService.request.PeticionChangeNombreREST;
 import asw.participants.webService.request.PeticionChangePasswordREST;
 import asw.participants.webService.responses.RespuestaChangeInfoREST;
@@ -38,5 +39,5 @@ public interface ChangeInfo {
 	 * @param datos requeridos (localizacion, password, nuevaLocalizacion)
 	 * @return respuesta en xml o json
 	 */
-	public ResponseEntity<RespuestaChangeInfoREST> changeLocalizacion(PeticionChangeEmailREST datos);
+	public ResponseEntity<RespuestaChangeInfoREST> changeLocalizacion(PeticionChangeLocalizacionREST datos);
 }

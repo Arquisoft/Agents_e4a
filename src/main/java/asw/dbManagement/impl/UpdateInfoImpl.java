@@ -58,4 +58,13 @@ public class UpdateInfoImpl implements UpdateInfo {
 		
 	}
 
+	@Override
+	public void updateLocalizacion(Participant participant, String nuevaLocalizacion) {
+		if(nuevaLocalizacion != null){
+			participant.setLocalizacion(nuevaLocalizacion);
+			this.repository.save(participant);
+		}
+		
+	}
+
 }

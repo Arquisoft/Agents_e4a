@@ -11,4 +11,6 @@ public interface UpdateInfo {
 	public void updateEmail(Participant participant, String email);
 
 	public void updateName(Participant participant, String nuevoNombre);
+
+	public void updateLocalizacion(Participant participant, String nuevaLocalizacion);
 }

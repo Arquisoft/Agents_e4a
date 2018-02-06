@@ -16,6 +16,7 @@ import asw.dbManagement.model.Participant;
 import asw.participants.ChangeInfo;
 import asw.participants.util.Assert;
 import asw.participants.webService.request.PeticionChangeEmailREST;
+import asw.participants.webService.request.PeticionChangeLocalizacionREST;
 import asw.participants.webService.request.PeticionChangeNombreREST;
 import asw.participants.webService.request.PeticionChangePasswordREST;
 import asw.participants.webService.responses.RespuestaChangeInfoREST;
@@ -115,9 +116,29 @@ public class ChangeInfoRESTController implements ChangeInfo {
 	}
 
 	@Override
-	public ResponseEntity<RespuestaChangeInfoREST> changeLocalizacion(PeticionChangeEmailREST datos) {
-		// TODO Auto-generated method stub
-		return null;
+	@RequestMapping(value = "/changeLocalizacion", method = RequestMethod.POST, headers = { "Accept=application/json",
+	"Accept=application/xml" }, produces = { "application/json", "text/xml" })
+	public ResponseEntity<RespuestaChangeInfoREST> changeLocalizacion(@RequestBody(required = true)PeticionChangeLocalizacionREST datos) {
+		String localizacion = datos.getLocalizacion();
+		String password = datos.getPassword();
+		String nuevaLocalizacion = datos.getNuevaLocalizacion();
+		
+		Assert.isLocalizacionEmpty(localizacion);
+		
+		Assert.isLocalizacionEmpty(nuevaLocalizacion);
+		
+		Assert.isSameLocalizacion(localizacion, nuevaLocalizacion);
+
+		Assert.isPasswordEmpty(password);
+		
+		Participant p = getParticipant.getParticipant(localizacion);
+		Assert.isParticipantNull(p);
+		Assert.isPasswordCorrect(password, p);
+		
+		updateInfo.updateLocalizacion(p, nuevaLocalizacion);
+
+		RespuestaChangeInfoREST res = new RespuestaChangeInfoREST(nuevaLocalizacion, "localizacion actualizada correctamente");
+		return new ResponseEntity<RespuestaChangeInfoREST>(res, HttpStatus.OK);
 	}
 
 }

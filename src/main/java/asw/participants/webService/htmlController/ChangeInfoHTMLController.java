@@ -81,6 +81,23 @@ public class ChangeInfoHTMLController {
 		model.addAttribute("info", "nombre actualizado correctamente");
 		return "datosParticipant";
 	}
+	
+	@RequestMapping(value = "/confirmLocalizacion", method = RequestMethod.POST)
+	public String changeLocalizacion(HttpSession session, @RequestParam String localizacion, Model model) {
+		Assert.isLocalizacionEmpty(localizacion);
+
+		// Participant que se ha logeado antes
+		Participant p = (Participant) session.getAttribute("participant");
+		Assert.isParticipantNull(p);
+		Assert.isSameLocalizacion(localizacion, p.getNombre());
+
+		// Actualizo sus datos
+		updateInfo.updateLocalizacion(p, localizacion);
+
+		// Mensaje a mostrar en HTML
+		model.addAttribute("info", "localizacion actualizada correctamente");
+		return "datosParticipant";
+	}
 
 	@ExceptionHandler(ErrorResponse.class)
 	@ResponseStatus(value = HttpStatus.NOT_FOUND)
