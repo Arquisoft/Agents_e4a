@@ -88,16 +88,18 @@ public class MainTest {
 		assertEquals(participant1.hashCode(), participant3.hashCode());
 	}
 
-	/*
+	
 	@Test
 	public void T4participantExistAndCorrectPasssword() {
 		ResponseEntity<String> response = template.getForEntity(base.toString(), String.class);
 		String userURI = base.toString() + "/user";
 
-		response = template.postForEntity(userURI, new PeticionInfoREST("paco@hotmail.com", "123456"), String.class);
+		response = template.postForEntity(userURI, new PeticionInfoREST("paco@hotmail.com", "123456", "Person"), String.class);
 		assertThat(response.getBody(), equalTo(
 				"{\"firstName\":\"Paco\",\"lastName\":\"Gómez\",\"edad\":47,\"email\":\"paco@hotmail.com\",\"id\":\"12345678A\"}"));
+	}
 
+		/*
 		response = template.postForEntity(userURI, new PeticionInfoREST("pepe@gmail.com", "123456"), String.class);
 		assertThat(response.getBody(), equalTo(
 				"{\"firstName\":\"Pepe\",\"lastName\":\"Fernández\",\"edad\":42,\"email\":\"pepe@gmail.com\",\"id\":\"87654321B\"}"));
@@ -107,6 +109,7 @@ public class MainTest {
 				"{\"firstName\":\"Carmen\",\"lastName\":\"López\",\"edad\":47,\"email\":\"carmen@yahoo.com\",\"id\":\"11223344C\"}"));
 	}
 
+	/*
 	@Test
 	public void T5participantDoNotExist() {
 		ResponseEntity<String> response = template.getForEntity(base.toString(), String.class);
