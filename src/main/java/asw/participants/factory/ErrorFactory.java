@@ -7,8 +7,10 @@ import asw.participants.webService.responses.errors.PasswordDoNotMatchErrorRespo
 import asw.participants.webService.responses.errors.RequiredEmailErrorResponse;
 import asw.participants.webService.responses.errors.RequiredKindErrorResponse;
 import asw.participants.webService.responses.errors.RequiredLoginErrorResponse;
+import asw.participants.webService.responses.errors.RequiredNombreErrorResponse;
 import asw.participants.webService.responses.errors.RequiredPasswordErrorResponse;
 import asw.participants.webService.responses.errors.SameEmailErrorResponse;
+import asw.participants.webService.responses.errors.SameNombreErrorResponse;
 import asw.participants.webService.responses.errors.UnknownErrorResponse;
 import asw.participants.webService.responses.errors.UserNotFoundResponse;
 import asw.participants.webService.responses.errors.WrongEmailStyleErrorResponse;
@@ -26,7 +28,9 @@ public class ErrorFactory {
 		SAME_EMAIL,
 		REQUIRED_LOGIN,
 		REQUIRED_KIND,
-		INCORRECT_KIND_DO_NOT_MATCH
+		INCORRECT_KIND_DO_NOT_MATCH,
+		REQUIRED_NOMBRE,
+		SAME_NOMBRE
 	}
 
 	// Generar Constructor privado no queremos que se pueda tener varias
@@ -56,6 +60,10 @@ public class ErrorFactory {
 			return new RequiredKindErrorResponse();
 		case INCORRECT_KIND_DO_NOT_MATCH:
 			return new KindDoNotMatchErrorResponse();
+		case REQUIRED_NOMBRE:
+			return new RequiredNombreErrorResponse();
+		case SAME_NOMBRE:
+			return new SameNombreErrorResponse();
 		default:// en caso de no conocer el error.
 			return new UnknownErrorResponse();
 		}

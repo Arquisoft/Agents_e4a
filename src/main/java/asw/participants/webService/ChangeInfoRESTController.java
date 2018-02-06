@@ -16,6 +16,7 @@ import asw.dbManagement.model.Participant;
 import asw.participants.ChangeInfo;
 import asw.participants.util.Assert;
 import asw.participants.webService.request.PeticionChangeEmailREST;
+import asw.participants.webService.request.PeticionChangeNombreREST;
 import asw.participants.webService.request.PeticionChangePasswordREST;
 import asw.participants.webService.responses.RespuestaChangeInfoREST;
 import asw.participants.webService.responses.errors.ErrorResponse;
@@ -85,6 +86,38 @@ public class ChangeInfoRESTController implements ChangeInfo {
 	@ResponseStatus(value = HttpStatus.NOT_FOUND)
 	public String handleErrorResponses(ErrorResponse error) {
 		return error.getMessageJSONFormat();
+	}
+
+	@Override
+	@RequestMapping(value = "/changeNombre", method = RequestMethod.POST, headers = { "Accept=application/json",
+	"Accept=application/xml" }, produces = { "application/json", "text/xml" })
+	public ResponseEntity<RespuestaChangeInfoREST> changeNombre(@RequestBody(required = true)PeticionChangeNombreREST datos) {
+		String nombre = datos.getNombre();
+		String password = datos.getPassword();
+		String nuevoNombre = datos.getNuevoNombre();
+		
+		Assert.isNombreEmpty(nombre);
+		
+		Assert.isEmailEmpty(nuevoNombre);
+		
+		Assert.isSameNombre(nombre, nuevoNombre);
+
+		Assert.isPasswordEmpty(password);
+		
+		Participant p = getParticipant.getParticipant(nombre);
+		Assert.isParticipantNull(p);
+		Assert.isPasswordCorrect(password, p);
+		
+		updateInfo.updateName(p, nuevoNombre);
+
+		RespuestaChangeInfoREST res = new RespuestaChangeInfoREST(nuevoNombre, "nombre actualizado correctamente");
+		return new ResponseEntity<RespuestaChangeInfoREST>(res, HttpStatus.OK);
+	}
+
+	@Override
+	public ResponseEntity<RespuestaChangeInfoREST> changeLocalizacion(PeticionChangeEmailREST datos) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

@@ -45,4 +45,17 @@ public class UpdateInfoImpl implements UpdateInfo {
 		}
 	}
 
+	/**
+	 * Método que permite la actualización del nombre del Participante
+	 * Se comprueba que el nombre no esté vacío
+	 */
+	@Override
+	public void updateName(Participant participant, String nuevoNombre) {
+		if(nuevoNombre != null){
+			participant.setNombre(nuevoNombre);
+			this.repository.save(participant);
+		}
+		
+	}
+
 }

@@ -9,4 +9,6 @@ public interface UpdateInfo {
 	public void updatePassword(Participant participant, String password, String newPassword);
 	
 	public void updateEmail(Participant participant, String email);
+
+	public void updateName(Participant participant, String nuevoNombre);
 }

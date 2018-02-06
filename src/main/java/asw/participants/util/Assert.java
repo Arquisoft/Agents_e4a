@@ -24,6 +24,13 @@ public class Assert {
 		else
 			return false;
 	}
+	
+	public static boolean isNombreEmpty(String nombre) {
+		if(nombre.trim().isEmpty())
+			throw ErrorFactory.getError(Errors.REQUIRED_NOMBRE);
+		else
+			return false;
+	}
 
 	/**
 	 * Comprobacion de si el correo es valido
@@ -71,6 +78,13 @@ public class Assert {
 	public static boolean isSameEmail(String email, String email2){
 		if (email.equals(email2)) {
 			throw ErrorFactory.getError(Errors.SAME_EMAIL);
+		}
+		return true;
+	}
+	
+	public static boolean isSameNombre(String nombre, String nombre2){
+		if (nombre.equals(nombre2)) {
+			throw ErrorFactory.getError(Errors.SAME_NOMBRE);
 		}
 		return true;
 	}

@@ -64,6 +64,23 @@ public class ChangeInfoHTMLController {
 		model.addAttribute("info", "Email actualizado correctamente");
 		return "datosParticipant";
 	}
+	
+	@RequestMapping(value = "/confirmNombre", method = RequestMethod.POST)
+	public String changeNombre(HttpSession session, @RequestParam String nombre, Model model) {
+		Assert.isNombreEmpty(nombre);
+
+		// Participant que se ha logeado antes
+		Participant p = (Participant) session.getAttribute("participant");
+		Assert.isParticipantNull(p);
+		Assert.isSameEmail(nombre, p.getNombre());
+
+		// Actualizo sus datos
+		updateInfo.updateName(p, nombre);
+
+		// Mensaje a mostrar en HTML
+		model.addAttribute("info", "nombre actualizado correctamente");
+		return "datosParticipant";
+	}
 
 	@ExceptionHandler(ErrorResponse.class)
 	@ResponseStatus(value = HttpStatus.NOT_FOUND)
