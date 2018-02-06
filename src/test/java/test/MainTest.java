@@ -80,14 +80,15 @@ public class MainTest {
 						+ participant1.getTipoCode() + ", password=" + participant1.getPassword() + "]");
 	}
 
-/*
+
 	@Test
 	public void T3domainModelHashCodeTest() {
-		Participant participant1 = getParticipant.getParticipant("paco@hotmail.com");
-		Participant participant3 = getParticipant.getParticipant("paco@hotmail.com");
+		Agent participant1 = getParticipant.getAgent("13864928P");
+		Agent participant3 = getParticipant.getAgent("13864928P");
 		assertEquals(participant1.hashCode(), participant3.hashCode());
 	}
 
+	/*
 	@Test
 	public void T4participantExistAndCorrectPasssword() {
 		ResponseEntity<String> response = template.getForEntity(base.toString(), String.class);
