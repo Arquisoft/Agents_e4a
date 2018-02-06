@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import asw.dbManagement.UpdateInfo;
-import asw.dbManagement.model.Participant;
+import asw.dbManagement.model.Agent;
 import asw.dbManagement.repository.ParticipantRepository;
 
 @Service
@@ -23,7 +23,7 @@ public class UpdateInfoImpl implements UpdateInfo {
 	 * la actual coincida con la del participante
 	 */
 	@Override
-	public void updatePassword(Participant participant, String password, String newPassword) {
+	public void updatePassword(Agent participant, String password, String newPassword) {
 		
 		if (password != null && newPassword != null && !(password.equals(newPassword))
 				&& participant.getPassword().equals(password)) {
@@ -38,7 +38,7 @@ public class UpdateInfoImpl implements UpdateInfo {
 	 * Se comprueba que el email no esté vacío
 	 */
 	@Override
-	public void updateEmail(Participant participant, String email) {
+	public void updateEmail(Agent participant, String email) {
 		if(email != null){
 			participant.setEmail(email);
 			this.repository.save(participant);
@@ -50,7 +50,7 @@ public class UpdateInfoImpl implements UpdateInfo {
 	 * Se comprueba que el nombre no esté vacío
 	 */
 	@Override
-	public void updateName(Participant participant, String nuevoNombre) {
+	public void updateName(Agent participant, String nuevoNombre) {
 		if(nuevoNombre != null){
 			participant.setNombre(nuevoNombre);
 			this.repository.save(participant);
@@ -59,7 +59,7 @@ public class UpdateInfoImpl implements UpdateInfo {
 	}
 
 	@Override
-	public void updateLocalizacion(Participant participant, String nuevaLocalizacion) {
+	public void updateLocalizacion(Agent participant, String nuevaLocalizacion) {
 		if(nuevaLocalizacion != null){
 			participant.setLocalizacion(nuevaLocalizacion);
 			this.repository.save(participant);

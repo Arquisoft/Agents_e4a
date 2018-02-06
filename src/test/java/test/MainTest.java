@@ -35,7 +35,7 @@ import org.springframework.web.client.RestTemplate;
 
 import asw.Application;
 import asw.dbManagement.GetParticipant;
-import asw.dbManagement.model.Participant;
+import asw.dbManagement.model.Agent;
 import asw.participants.webService.request.PeticionChangeEmailREST;
 import asw.participants.webService.request.PeticionChangePasswordREST;
 import asw.participants.webService.request.PeticionInfoREST;
@@ -65,7 +65,7 @@ public class MainTest {
 
 	@Test
 	public void T1domainModelEqualsTest() {
-		Participant participant1 = getParticipant.getParticipant("13864928P");
+		Agent participant1 = getParticipant.getParticipant("13864928P");
 		assertFalse(participant1.equals(4));
 		assertTrue(participant1.equals(participant1));
 	}

@@ -1,13 +1,13 @@
 package asw.dbManagement;
 
-import asw.dbManagement.model.Participant;
+import asw.dbManagement.model.Agent;
 
 public interface GetParticipant {
 	
 	/**
 	 * Permite la solicitud la de información para el usuario.
 	 */
-	public Participant getParticipant(String indentificador);
+	public Agent getParticipant(String indentificador);
 	
 	
 }

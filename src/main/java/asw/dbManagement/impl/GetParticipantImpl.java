@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import asw.dbManagement.GetParticipant;
-import asw.dbManagement.model.Participant;
+import asw.dbManagement.model.Agent;
 import asw.dbManagement.repository.ParticipantRepository;
 
 
@@ -24,7 +24,7 @@ public class GetParticipantImpl implements GetParticipant {
 	 * Hace uso del método findByIdentificador (mapeador)
 	 */
 	@Override
-	public Participant getParticipant(String identificador) {
+	public Agent getParticipant(String identificador) {
 		
 		return this.repository.findByIdentificador(identificador);
 	}

@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
-import asw.dbManagement.model.Participant;
+import asw.dbManagement.model.Agent;
 import asw.dbManagement.repository.ParticipantRepository;
 
 import java.text.ParseException;
@@ -27,7 +27,7 @@ public class Application {
 
 		return (args) -> {
 			// Inserción en la base de datos
-			repository.save(new Participant("Paco Gómez", "-3.7339100,40.4416800","paco@hotmail.com", "13864928P",
+			repository.save(new Agent("Paco Gómez", "-3.7339100,40.4416800","paco@hotmail.com", "13864928P",
 					"Person", 1, "123456"));
 
 		};
