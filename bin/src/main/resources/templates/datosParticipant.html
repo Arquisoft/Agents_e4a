@@ -7,8 +7,16 @@
 </head>
 <body>
 <h1>Datos personales</h1>
-	<p><strong>Nombre:</strong> <span th:text="${session.participant.nombre}"></span></p>
-	<p><strong>Localizacion:</strong> <span th:text="${session.participant.localizacion}"></span></p>
+	<form method="POST" action="confirmNombre" >
+		<label for="nombre"><strong>Nombre:</strong> </label>
+		<input type="text" name="nombre" th:value="${session.participant.nombre}"/>
+		<input type="submit" name="cambiarNombre" value="Cambiar nombre"/>
+	</form>
+	<form method="POST" action="confirmLocalizacion" >
+		<label for="localizacion"><strong>Localización:</strong> </label>
+		<input type="text" name="localizacion" th:value="${session.participant.localizacion}"/>
+		<input type="submit" name="cambiarLocalizacion" value="Cambiar localizacion"/>
+	</form>
 	<form method="POST" action="confirmEmail" >
 		<label for="email"><strong>Email:</strong> </label>
 		<input type="text" name="email" th:value="${session.participant.email}"/>

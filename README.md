@@ -16,4 +16,5 @@ Skeleton of participants module
 - Gonzalo Collada Vázquez (UO252066)
 - Carlos Concheso Cubillas (UO237674)
 - Paloma Sierra Bonet (UO232919)
+- Pelayo Garcia Menendez (UO251765)
 
