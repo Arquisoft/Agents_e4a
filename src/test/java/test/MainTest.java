@@ -363,7 +363,7 @@ public class MainTest {
 		assertThat(response.getBody(), equalTo(passwordRequired));
 	}
 	
-	/*
+	
 	@Test
 	public void T20newPasswordRequiredPasswordChange() {
 		ResponseEntity<String> response = template.getForEntity(base.toString(), String.class);
@@ -440,6 +440,7 @@ public class MainTest {
 		assertThat(response.getBody(), equalTo(passwordIncorrect));
 	}
 
+	/*
 	@Test
 	public void T24testHtmlController() {
 		ResponseEntity<String> response = template.getForEntity(base.toString(), String.class);
@@ -455,7 +456,9 @@ public class MainTest {
 						+ "\"submit\"id=\"login\">Entrar</button></td></tr></table></form></body></html>").replace(" ",
 								"")));
 	}
+	*/
 	
+	/*
 	@Test
 	public void emailChangeCorrect() {
 		ResponseEntity<String> response = template.getForEntity(base.toString(), String.class);
@@ -522,7 +525,8 @@ public class MainTest {
 		response = template.postForEntity(userURI, new PeticionChangeEmailREST("fhfyg@hotmail.com", "123456", "carmen@yahoo.com"),
 				String.class);
 		assertThat(response.getBody(), equalTo(correctChange));
-	}*/
+	}
+	*/
 
 	// Cabecera HTTP para pedir respuesta en XML
 	public class AcceptInterceptor implements ClientHttpRequestInterceptor {
