@@ -214,7 +214,7 @@ public class MainTest {
 		assertThat(response.getBody(), equalTo(emptyEmail));
 	}
 
-	/*
+	
 	@Test
 	public void T12newEmailRequiredChange() {
 		ResponseEntity<String> response = template.getForEntity(base.toString(), String.class);
@@ -232,7 +232,6 @@ public class MainTest {
 				String.class);
 		assertThat(response.getBody(), equalTo(emptyEmail));
 	}
-
 	
 	@Test
 	public void T13invalidEmailChange() {
@@ -250,6 +249,7 @@ public class MainTest {
 		assertThat(response.getBody(), equalTo(wrongEmailStyle));
 	}
 
+	/*
 	@Test
 	public void T14newInvalidEmailChange() {
 		ResponseEntity<String> response = template.getForEntity(base.toString(), String.class);
