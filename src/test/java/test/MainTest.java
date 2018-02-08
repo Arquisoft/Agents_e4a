@@ -138,27 +138,26 @@ public class MainTest {
 
 		
 	}
-	
-	/*
 
 	@Test
 	public void T7emptyEmail() {
 		ResponseEntity<String> response = template.getForEntity(base.toString(), String.class);
 		String userURI = base.toString() + "/user";
 		String emptyEmail = "{\"reason\": \"User email is required\"}";
-		response = template.postForEntity(userURI, new PeticionInfoREST("", ""), String.class);
+		response = template.postForEntity(userURI, new PeticionInfoREST("", "","Person"), String.class);
 		assertThat(response.getBody(), equalTo(emptyEmail));
 
-		response = template.postForEntity(userURI, new PeticionInfoREST("", "1223"), String.class);
+		response = template.postForEntity(userURI, new PeticionInfoREST("", "1223","Person"), String.class);
 		assertThat(response.getBody(), equalTo(emptyEmail));
 
-		response = template.postForEntity(userURI, new PeticionInfoREST("", "iewgs"), String.class);
+		response = template.postForEntity(userURI, new PeticionInfoREST("", "iewgs","Person"), String.class);
 		assertThat(response.getBody(), equalTo(emptyEmail));
 
-		response = template.postForEntity(userURI, new PeticionInfoREST("   ", ""), String.class);
+		response = template.postForEntity(userURI, new PeticionInfoREST("   ", "","Person"), String.class);
 		assertThat(response.getBody(), equalTo(emptyEmail));
 	}
 
+	/*
 	@Test
 	public void T8invalidEmail() {
 		ResponseEntity<String> response = template.getForEntity(base.toString(), String.class);
