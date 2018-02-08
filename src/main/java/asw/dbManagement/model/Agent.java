@@ -23,7 +23,7 @@ public class Agent implements Serializable{
 	@Column(unique = true) private String identificador;
 	private String nombre;
 	@Column(nullable = false) private String email;	
-	private String localizacion;
+	private String direccionPostal;
 	private String username;
 	public String tipo;
 	private String password;
@@ -64,7 +64,7 @@ public class Agent implements Serializable{
 			//this.apellidos=apellidos;
 			this.username=username;
 			//this.fechaNacimiento=fechaNacimiento;
-			this.localizacion = direccionPostal;
+			this.direccionPostal = direccionPostal;
 			this.email = email;
 //			this.nacionalidad=nacionalidad;
 //			this.dni=DNI;
@@ -83,11 +83,11 @@ public class Agent implements Serializable{
 		}
 
 		public String getLocalizacion() {
-			return localizacion;
+			return direccionPostal;
 		}
 
 		public void setLocalizacion(String localizacion) {
-			this.localizacion = localizacion;
+			this.direccionPostal = localizacion;
 		}
 
 		public String getEmail() {
@@ -138,6 +138,14 @@ public class Agent implements Serializable{
 			this.password = password;
 		}
 		
+
+		public String getDireccionPostal() {
+			return direccionPostal;
+		}
+
+		public void setDireccionPostal(String direccionPostal) {
+			this.direccionPostal = direccionPostal;
+		}
 
 		public int getType() {
 			return type;
@@ -208,7 +216,7 @@ public class Agent implements Serializable{
 
 		@Override
 		public String toString() {
-			return "Agent [nombre=" + nombre + ", localizacion=" + localizacion + ", email=" + email
+			return "Agent [nombre=" + nombre + ", localizacion=" + direccionPostal + ", email=" + email
 					+ ", identificador=" + identificador + ", tipo=" + tipo + ", tipoCode=" + type + ", password="
 					+ password + "]";
 		}
