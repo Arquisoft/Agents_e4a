@@ -28,7 +28,6 @@ public class Agent implements Serializable{
 	private String password;
 	private int type;
 	
-	private Long id;
 	private String apellidos;
 	private Date fechaNacimiento;
 
@@ -145,14 +144,6 @@ public class Agent implements Serializable{
 
 		public void setType(int type) {
 			this.type = type;
-		}
-
-		public Long getId() {
-			return id;
-		}
-
-		public void setId(Long id) {
-			this.id = id;
 		}
 
 		public String getApellidos() {
