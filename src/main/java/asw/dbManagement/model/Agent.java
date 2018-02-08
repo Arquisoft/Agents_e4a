@@ -25,7 +25,7 @@ public class Agent implements Serializable{
 	@Column(nullable = false) private String email;	
 	private String direccionPostal;
 	private String username;
-	private String tipo;
+	public String tipo;
 	private String password;
 	private int type;
 	
