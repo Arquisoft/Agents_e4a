@@ -118,10 +118,10 @@ public class Assert {
 	}
 
 	public static boolean isKindCorrect(String kind,Agent participant){
-		instancia=CsvReader.getInstance("src/main/resources/maestro.csv");
+
 		//System.out.println(kind);
 		//System.out.println(participant.getTipoCode());
-		if(!instancia.checkType(kind, participant)) {
+		if(!Application.instancia.checkType(kind, participant)) {
 			throw ErrorFactory.getError(Errors.INCORRECT_KIND_DO_NOT_MATCH);
 		}
 		return true;

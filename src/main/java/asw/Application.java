@@ -20,7 +20,7 @@ import org.springframework.context.annotation.Bean;
 @SpringBootApplication
 public class Application {
 	
-	//public static ReaderSingleton instancia;
+	public static CsvReader instancia;
 
 	public static void main(String[] args) {
 		SpringApplication.run(Application.class, args);
@@ -29,7 +29,7 @@ public class Application {
 	@Bean
 	public CommandLineRunner initDB(AgentRepository repository) throws ParseException {
 		Date date = new Date(System.currentTimeMillis());
-		//instancia=ReaderSingleton.getInstance("src/main/resources/maestro.csv");
+		instancia=CsvReader.getInstance("src/main/resources/maestro.csv");
 		
 		return (args) -> {
 			// Inserción en la base de datos
