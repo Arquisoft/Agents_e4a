@@ -25,14 +25,15 @@ public class Agent implements Serializable{
 	@Column(nullable = false) private String email;	
 	private String direccionPostal;
 	private String username;
+	private String tipo;
 	private String password;
 	private int type;
 	
-	private String apellidos;
-	private Date fechaNacimiento;
-
-	private String nacionalidad;
-	private String dni;
+//	private String apellidos;
+//	private Date fechaNacimiento;
+//
+//	private String nacionalidad;
+//	private String dni;
 
 	
 		/**
@@ -60,13 +61,13 @@ public class Agent implements Serializable{
 				int tipoCode, String password, String identificador, String username) {
 			super();
 			this.nombre = nombre;
-			this.apellidos=apellidos;
+			//this.apellidos=apellidos;
 			this.username=username;
-			this.fechaNacimiento=fechaNacimiento;
+			//this.fechaNacimiento=fechaNacimiento;
 			this.direccionPostal = direccionPostal;
 			this.email = email;
-			this.nacionalidad=nacionalidad;
-			this.dni=DNI;
+//			this.nacionalidad=nacionalidad;
+//			this.dni=DNI;
 			
 			this.identificador = identificador;
 			this.type = tipoCode;
@@ -112,6 +113,14 @@ public class Agent implements Serializable{
 		public void setUsername(String tipo) {
 			this.username = tipo;
 		}
+		
+		public String getKind() {
+			return tipo;
+		}
+
+		public void setKind(String tipo) {
+			this.tipo = tipo;
+		}
 
 		public int getTipoCode() {
 			return type;
@@ -146,37 +155,37 @@ public class Agent implements Serializable{
 			this.type = type;
 		}
 
-		public String getApellidos() {
-			return apellidos;
-		}
-
-		public void setApellidos(String apellidos) {
-			this.apellidos = apellidos;
-		}
-
-		public Date getFechaNacimiento() {
-			return fechaNacimiento;
-		}
-
-		public void setFechaNacimiento(Date fechaNacimiento) {
-			this.fechaNacimiento = fechaNacimiento;
-		}
-
-		public String getNacionalidad() {
-			return nacionalidad;
-		}
-
-		public void setNacionalidad(String nacionalidad) {
-			this.nacionalidad = nacionalidad;
-		}
-
-		public String getDni() {
-			return dni;
-		}
-
-		public void setDni(String dni) {
-			this.dni = dni;
-		}
+//		public String getApellidos() {
+//			return apellidos;
+//		}
+//
+//		public void setApellidos(String apellidos) {
+//			this.apellidos = apellidos;
+//		}
+//
+//		public Date getFechaNacimiento() {
+//			return fechaNacimiento;
+//		}
+//
+//		public void setFechaNacimiento(Date fechaNacimiento) {
+//			this.fechaNacimiento = fechaNacimiento;
+//		}
+//
+//		public String getNacionalidad() {
+//			return nacionalidad;
+//		}
+//
+//		public void setNacionalidad(String nacionalidad) {
+//			this.nacionalidad = nacionalidad;
+//		}
+//
+//		public String getDni() {
+//			return dni;
+//		}
+//
+//		public void setDni(String dni) {
+//			this.dni = dni;
+//		}
 
 		@Override
 		public int hashCode() {
@@ -195,10 +204,10 @@ public class Agent implements Serializable{
 			if (getClass() != obj.getClass())
 				return false;
 			Agent other = (Agent) obj;
-			if (dni == null) {
-				if (other.dni != null)
+			if (identificador == null) {
+				if (other.identificador != null)
 					return false;
-			} else if (!dni.equals(other.dni))
+			} else if (!identificador.equals(other.identificador))
 				return false;
 			return true;
 		}
@@ -208,7 +217,7 @@ public class Agent implements Serializable{
 		@Override
 		public String toString() {
 			return "Agent [nombre=" + nombre + ", localizacion=" + direccionPostal + ", email=" + email
-					+ ", identificador=" + identificador + ", username=" + username + ", tipoCode=" + type + ", password="
+					+ ", identificador=" + identificador + ", tipo=" + tipo + ", tipoCode=" + type + ", password="
 					+ password + "]";
 		}
 

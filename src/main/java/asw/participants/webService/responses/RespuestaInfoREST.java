@@ -12,7 +12,7 @@ public class RespuestaInfoREST {
 	private String location;
 	private String email;
 	private String id;
-	private String username;
+	private String tipo;
 	private int kindCode;
 	
 	public RespuestaInfoREST() {}
@@ -22,7 +22,7 @@ public class RespuestaInfoREST {
 		setLocation(participant.getLocalizacion());
 		setEmail(participant.getEmail());
 		setId(participant.getIdentificador());
-		setUsername(participant.getUsername());
+		setKind(participant.getKind());
 		setKindCode(participant.getTipoCode());
 	}
 
@@ -63,13 +63,13 @@ public class RespuestaInfoREST {
 		this.id = id;
 	}
 
-	public String getUsername() {
-		return username;
+	public String getKind() {
+		return tipo;
 	}
 
 	@XmlElement
-	public void setUsername(String kind) {
-		this.username = kind;
+	public void setKind(String kind) {
+		this.tipo = kind;
 	}
 
 	public int getKindCode() {

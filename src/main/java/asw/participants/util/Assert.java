@@ -124,6 +124,7 @@ public class Assert {
 		if(!Application.instancia.checkType(kind, participant)) {
 			throw ErrorFactory.getError(Errors.INCORRECT_KIND_DO_NOT_MATCH);
 		}
+		participant.setKind(kind.toLowerCase());
 		return true;
 		/*if (!kind.equals(participant.getTipo())) {
 			throw ErrorFactory.getError(Errors.INCORRECT_KIND_DO_NOT_MATCH);
