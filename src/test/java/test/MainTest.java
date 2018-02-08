@@ -249,7 +249,7 @@ public class MainTest {
 		assertThat(response.getBody(), equalTo(wrongEmailStyle));
 	}
 
-	/*
+	
 	@Test
 	public void T14newInvalidEmailChange() {
 		ResponseEntity<String> response = template.getForEntity(base.toString(), String.class);
@@ -269,6 +269,7 @@ public class MainTest {
 		assertThat(response.getBody(), equalTo(wrongEmailStyle));
 	}
 
+	
 	@Test
 	public void T15emailChangeUserNotFound() {
 		ResponseEntity<String> response = template.getForEntity(base.toString(), String.class);
@@ -307,6 +308,7 @@ public class MainTest {
 		assertThat(response.getBody(), equalTo(sameEmail));
 	}
 
+	/*
 	@Test
 	public void T17emailRequiredPasswordChange() {
 		ResponseEntity<String> response = template.getForEntity(base.toString(), String.class);
@@ -322,7 +324,8 @@ public class MainTest {
 		response = template.postForEntity(userURI, new PeticionChangePasswordREST("", "dfhe", "dhdgx"), String.class);
 		assertThat(response.getBody(), equalTo(emptyEmail));
 	}
-
+	
+	
 	@Test
 	public void T18inValidRequiredPasswordChange() {
 		ResponseEntity<String> response = template.getForEntity(base.toString(), String.class);
@@ -339,7 +342,8 @@ public class MainTest {
 				String.class);
 		assertThat(response.getBody(), equalTo(wrongEmailStyle));
 	}
-
+	 */
+	
 	@Test
 	public void T19passwordRequiredPasswordChange() {
 		ResponseEntity<String> response = template.getForEntity(base.toString(), String.class);
@@ -358,7 +362,8 @@ public class MainTest {
 				String.class);
 		assertThat(response.getBody(), equalTo(passwordRequired));
 	}
-
+	
+	/*
 	@Test
 	public void T20newPasswordRequiredPasswordChange() {
 		ResponseEntity<String> response = template.getForEntity(base.toString(), String.class);
