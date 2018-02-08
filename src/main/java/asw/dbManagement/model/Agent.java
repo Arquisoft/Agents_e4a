@@ -2,11 +2,13 @@ package asw.dbManagement.model;
 
 
 import java.io.Serializable;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
 
 @Entity
 @Table(name = "Agent")
@@ -21,10 +23,18 @@ public class Agent implements Serializable{
 	@Column(unique = true) private String identificador;
 	private String nombre;
 	@Column(nullable = false) private String email;	
-	private String localizacion;
+	private String direccionPostal;
 	private String username;
 	private String password;
 	private int type;
+	
+	private Long id;
+	private String apellidos;
+	private Date fechaNacimiento;
+
+	private String nacionalidad;
+	private String dni;
+
 	
 		/**
 		 * Constructor vacío (ya que es para mapear)
@@ -44,18 +54,25 @@ public class Agent implements Serializable{
 		 * @param password
 		 */
 
-		public Agent(String nombre, String localizacion, String email, int tipoCode, String identificador,
-				 String username, String password) {
+		
+		
+		public Agent(String nombre,  String apellidos, String email, Date fechaNacimiento,
+				String direccionPostal, String nacionalidad, String DNI,
+				int tipoCode, String password, String identificador, String username) {
 			super();
-			this.identificador = identificador;
 			this.nombre = nombre;
-			this.localizacion = localizacion;
-			this.email = email;	
-			this.username = username;
+			this.apellidos=apellidos;
+			this.username=username;
+			this.fechaNacimiento=fechaNacimiento;
+			this.direccionPostal = direccionPostal;
+			this.email = email;
+			this.nacionalidad=nacionalidad;
+			this.dni=DNI;
+			
+			this.identificador = identificador;
 			this.type = tipoCode;
 			this.password = password;
 		}
-
 
 		public String getNombre() {
 			return nombre;
@@ -66,11 +83,11 @@ public class Agent implements Serializable{
 		}
 
 		public String getLocalizacion() {
-			return localizacion;
+			return direccionPostal;
 		}
 
 		public void setLocalizacion(String localizacion) {
-			this.localizacion = localizacion;
+			this.direccionPostal = localizacion;
 		}
 
 		public String getEmail() {
@@ -112,6 +129,63 @@ public class Agent implements Serializable{
 		public void setPassword(String password) {
 			this.password = password;
 		}
+		
+
+		public String getDireccionPostal() {
+			return direccionPostal;
+		}
+
+		public void setDireccionPostal(String direccionPostal) {
+			this.direccionPostal = direccionPostal;
+		}
+
+		public int getType() {
+			return type;
+		}
+
+		public void setType(int type) {
+			this.type = type;
+		}
+
+		public Long getId() {
+			return id;
+		}
+
+		public void setId(Long id) {
+			this.id = id;
+		}
+
+		public String getApellidos() {
+			return apellidos;
+		}
+
+		public void setApellidos(String apellidos) {
+			this.apellidos = apellidos;
+		}
+
+		public Date getFechaNacimiento() {
+			return fechaNacimiento;
+		}
+
+		public void setFechaNacimiento(Date fechaNacimiento) {
+			this.fechaNacimiento = fechaNacimiento;
+		}
+
+		public String getNacionalidad() {
+			return nacionalidad;
+		}
+
+		public void setNacionalidad(String nacionalidad) {
+			this.nacionalidad = nacionalidad;
+		}
+
+		public String getDni() {
+			return dni;
+		}
+
+		public void setDni(String dni) {
+			this.dni = dni;
+		}
 
 		@Override
 		public int hashCode() {
@@ -120,7 +194,7 @@ public class Agent implements Serializable{
 			result = prime * result + ((identificador == null) ? 0 : identificador.hashCode());
 			return result;
 		}
-
+	
 		@Override
 		public boolean equals(Object obj) {
 			if (this == obj)
@@ -130,17 +204,19 @@ public class Agent implements Serializable{
 			if (getClass() != obj.getClass())
 				return false;
 			Agent other = (Agent) obj;
-			if (identificador == null) {
-				if (other.identificador != null)
+			if (dni == null) {
+				if (other.dni != null)
 					return false;
-			} else if (!identificador.equals(other.identificador))
+			} else if (!dni.equals(other.dni))
 				return false;
 			return true;
 		}
+		
+		
 
 		@Override
 		public String toString() {
-			return "Agent [nombre=" + nombre + ", localizacion=" + localizacion + ", email=" + email
+			return "Agent [nombre=" + nombre + ", localizacion=" + direccionPostal + ", email=" + email
 					+ ", identificador=" + identificador + ", username=" + username + ", tipoCode=" + type + ", password="
 					+ password + "]";
 		}
