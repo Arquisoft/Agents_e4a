@@ -4,11 +4,11 @@ import asw.Application;
 import asw.dbManagement.model.Agent;
 import asw.participants.factory.ErrorFactory;
 import asw.participants.factory.ErrorFactory.Errors;
-import asw.participants.webService.htmlController.ReaderSingleton;
+import asw.participants.webService.CsvReader;
 
 public class Assert {
 	
-	public static ReaderSingleton instancia;
+	public static CsvReader instancia;
 	
 
 	/**
@@ -118,10 +118,10 @@ public class Assert {
 	}
 
 	public static boolean isKindCorrect(String kind,Agent participant){
-		instancia=ReaderSingleton.getInstance("src/main/resources/maestro.csv");
+
 		//System.out.println(kind);
 		//System.out.println(participant.getTipoCode());
-		if(!instancia.checkType(kind, participant)) {
+		if(!Application.instancia.checkType(kind, participant)) {
 			throw ErrorFactory.getError(Errors.INCORRECT_KIND_DO_NOT_MATCH);
 		}
 		return true;

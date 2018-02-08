@@ -7,9 +7,10 @@ import org.springframework.context.annotation.ComponentScan;
 
 import asw.dbManagement.model.Agent;
 import asw.dbManagement.repository.AgentRepository;
-import asw.participants.webService.htmlController.ReaderSingleton;
+import asw.participants.webService.CsvReader;
 
 import java.text.ParseException;
+import java.util.Date;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
@@ -19,7 +20,7 @@ import org.springframework.context.annotation.Bean;
 @SpringBootApplication
 public class Application {
 	
-	//public static ReaderSingleton instancia;
+	public static CsvReader instancia;
 
 	public static void main(String[] args) {
 		SpringApplication.run(Application.class, args);
@@ -27,22 +28,23 @@ public class Application {
 
 	@Bean
 	public CommandLineRunner initDB(AgentRepository repository) throws ParseException {
+		Date date = new Date(System.currentTimeMillis());
+		instancia=CsvReader.getInstance("src/main/resources/maestro.csv");
 		
-		//instancia=ReaderSingleton.getInstance("src/main/resources/maestro.csv");
-
 		return (args) -> {
 			// Inserción en la base de datos
-			repository.save(new Agent("Paco Gómez", "-3.7339100,40.4416800","paco@hotmail.com", 1,
-					"13864928P", "13864928P", "123456"));
+			
+			repository.save(new Agent("Paco Gómez", "Francisco", "paco@hotmail.com", date, "-3.7339100,40.4416800", "Español", "13864928P", 1, "123456","13864928P","13864928P"));
+			
 			
 			// Inserción en la base de datos
-			repository.save(new Agent("Pepe Fernández", "1.7339100,26.4416800", "pepe@gmail.com", 1,
-					"87654321B", "87654321B", "123456"));
+			repository.save(new Agent("Pepe Fernández", "Francisco", "pepe@gmail.com", date, "1.7339100,26.4416800", "Español", "87654321B", 1, "123456","87654321B","87654321B"));
+			
+			
 
 			// Inserción en la base de datos
-			repository.save(new Agent("Carmen López", "5.7339100,48.4416800", "carmen@yahoo.com", 1,
-					"11223344C", "11223344C", "123456"));
-
+			repository.save(new Agent("Carmen López", "Francisco", "carmen@yahoo.com", date, "5.7339100,48.4416800", "Español", "11223344C", 1, "123456","11223344C","11223344C"));
+			
 		};
 	}
 }
