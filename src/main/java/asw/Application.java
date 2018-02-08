@@ -7,7 +7,7 @@ import org.springframework.context.annotation.ComponentScan;
 
 import asw.dbManagement.model.Agent;
 import asw.dbManagement.repository.AgentRepository;
-import asw.participants.webService.htmlController.ReaderSingleton;
+import asw.participants.webService.CsvReader;
 
 import java.text.ParseException;
 import java.util.Date;
