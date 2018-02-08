@@ -76,7 +76,7 @@ public class MainTest {
 		assertEquals(participant1.toString(),
 				"Agent [nombre=" + participant1.getNombre() + ", localizacion=" + participant1.getLocalizacion()
 						+ ", email=" + participant1.getEmail() + ", identificador="
-						+ participant1.getIdentificador() + ", tipo=" + participant1.getTipo() + ", tipoCode="
+						+ participant1.getIdentificador() + ", username=" + participant1.getUsername() + ", tipoCode="
 						+ participant1.getTipoCode() + ", password=" + participant1.getPassword() + "]");
 	}
 

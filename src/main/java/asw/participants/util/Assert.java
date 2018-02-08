@@ -1,10 +1,15 @@
 package asw.participants.util;
 
+import asw.Application;
 import asw.dbManagement.model.Agent;
 import asw.participants.factory.ErrorFactory;
 import asw.participants.factory.ErrorFactory.Errors;
+import asw.participants.webService.htmlController.ReaderSingleton;
 
 public class Assert {
+	
+	public static ReaderSingleton instancia;
+	
 
 	/**
 	 * 
@@ -113,10 +118,17 @@ public class Assert {
 	}
 
 	public static boolean isKindCorrect(String kind,Agent participant){
-		if (!kind.equals(participant.getTipo())) {
+		instancia=ReaderSingleton.getInstance("src/main/resources/maestro.csv");
+		//System.out.println(kind);
+		//System.out.println(participant.getTipoCode());
+		if(!instancia.checkType(kind, participant)) {
 			throw ErrorFactory.getError(Errors.INCORRECT_KIND_DO_NOT_MATCH);
 		}
 		return true;
+		/*if (!kind.equals(participant.getTipo())) {
+			throw ErrorFactory.getError(Errors.INCORRECT_KIND_DO_NOT_MATCH);
+		}
+		return true;*/
 	}
 
 	public static boolean isSameLocalizacion(String localizacion, String nuevaLocalizacion) {

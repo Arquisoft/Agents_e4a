@@ -1,30 +1,31 @@
 package asw.dbManagement.model;
 
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "Agent")
-public class Agent {
+public class Agent implements Serializable{
 
-	// Id generado automáticamente para diferenciar cada uno (para mapear)
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
 	@Id
-	@GeneratedValue
-	private Long id;
-
-	// Atributos del participante
-		private String nombre;
-		private String localizacion;
-		@Column(nullable = false) private String email;
-		@Column(unique = true) private String identificador;
-		private String tipo;
-		private int tipoCode;
-		private String password;
-
+	@Column(unique = true) private String identificador;
+	private String nombre;
+	@Column(nullable = false) private String email;	
+	private String localizacion;
+	private String username;
+	private String password;
+	private int type;
+	
 		/**
 		 * Constructor vacío (ya que es para mapear)
 		 */
@@ -43,21 +44,18 @@ public class Agent {
 		 * @param password
 		 */
 
-		public Agent(String nombre, String localizacion, String email, String identificador, String tipo,
-				int tipoCode, String password) {
+		public Agent(String nombre, String localizacion, String email, int tipoCode, String identificador,
+				 String username, String password) {
 			super();
+			this.identificador = identificador;
 			this.nombre = nombre;
 			this.localizacion = localizacion;
-			this.email = email;
-			this.identificador = identificador;
-			this.tipo = tipo;
-			this.tipoCode = tipoCode;
+			this.email = email;	
+			this.username = username;
+			this.type = tipoCode;
 			this.password = password;
 		}
 
-		public Long getId() {
-			return id;
-		}
 
 		public String getNombre() {
 			return nombre;
@@ -91,20 +89,20 @@ public class Agent {
 			this.identificador = identificador;
 		}
 
-		public String getTipo() {
-			return tipo;
+		public String getUsername() {
+			return username;
 		}
 
-		public void setTipo(String tipo) {
-			this.tipo = tipo;
+		public void setUsername(String tipo) {
+			this.username = tipo;
 		}
 
 		public int getTipoCode() {
-			return tipoCode;
+			return type;
 		}
 
 		public void setTipoCode(int tipoCode) {
-			this.tipoCode = tipoCode;
+			this.type = tipoCode;
 		}
 
 		public String getPassword() {
@@ -119,7 +117,7 @@ public class Agent {
 		public int hashCode() {
 			final int prime = 31;
 			int result = 1;
-			result = prime * result + ((id == null) ? 0 : id.hashCode());
+			result = prime * result + ((identificador == null) ? 0 : identificador.hashCode());
 			return result;
 		}
 
@@ -132,10 +130,10 @@ public class Agent {
 			if (getClass() != obj.getClass())
 				return false;
 			Agent other = (Agent) obj;
-			if (id == null) {
-				if (other.id != null)
+			if (identificador == null) {
+				if (other.identificador != null)
 					return false;
-			} else if (!id.equals(other.id))
+			} else if (!identificador.equals(other.identificador))
 				return false;
 			return true;
 		}
@@ -143,7 +141,7 @@ public class Agent {
 		@Override
 		public String toString() {
 			return "Agent [nombre=" + nombre + ", localizacion=" + localizacion + ", email=" + email
-					+ ", identificador=" + identificador + ", tipo=" + tipo + ", tipoCode=" + tipoCode + ", password="
+					+ ", identificador=" + identificador + ", username=" + username + ", tipoCode=" + type + ", password="
 					+ password + "]";
 		}
 
