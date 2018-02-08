@@ -157,25 +157,26 @@ public class MainTest {
 		assertThat(response.getBody(), equalTo(emptyEmail));
 	}
 
-	/*
+
 	@Test
 	public void T8invalidEmail() {
 		ResponseEntity<String> response = template.getForEntity(base.toString(), String.class);
 		String userURI = base.toString() + "/user";
 		String wrongEmailStyle = "{\"reason\": \"Wrong mail style\"}";
-		response = template.postForEntity(userURI, new PeticionInfoREST("ajsjc", ""), String.class);
+		response = template.postForEntity(userURI, new PeticionInfoREST("ajsjc", "","Person"), String.class);
 		assertThat(response.getBody(), equalTo(wrongEmailStyle));
 
-		response = template.postForEntity(userURI, new PeticionInfoREST("jxjsjd@", ""), String.class);
+		response = template.postForEntity(userURI, new PeticionInfoREST("jxjsjd@", "","Person"), String.class);
 		assertThat(response.getBody(), equalTo(wrongEmailStyle));
 
-		response = template.postForEntity(userURI, new PeticionInfoREST("chdgetc@chhsy", ""), String.class);
+		response = template.postForEntity(userURI, new PeticionInfoREST("chdgetc@chhsy", "","Person"), String.class);
 		assertThat(response.getBody(), equalTo(wrongEmailStyle));
 
-		response = template.postForEntity(userURI, new PeticionInfoREST("sjhwuwsc", ""), String.class);
+		response = template.postForEntity(userURI, new PeticionInfoREST("sjhwuwsc", "", "Person"), String.class);
 		assertThat(response.getBody(), equalTo(wrongEmailStyle));
 	}
 
+/*
 	@Test
 	public void T9emptyPassword() {
 		ResponseEntity<String> response = template.getForEntity(base.toString(), String.class);
