@@ -125,6 +125,7 @@ public class Assert {
 			throw ErrorFactory.getError(Errors.INCORRECT_KIND_DO_NOT_MATCH);
 		}
 		participant.setKind(kind.toLowerCase());
+		participant.setNombre(participant.getNombre());
 		return true;
 		/*if (!kind.equals(participant.getTipo())) {
 			throw ErrorFactory.getError(Errors.INCORRECT_KIND_DO_NOT_MATCH);

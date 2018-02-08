@@ -22,8 +22,8 @@ public class RespuestaInfoREST {
 		setLocation(participant.getLocalizacion());
 		setEmail(participant.getEmail());
 		setId(participant.getIdentificador());
-		setKind(participant.getKind());
 		setKindCode(participant.getTipoCode());
+		setKind(participant.getKind());		
 	}
 
 
