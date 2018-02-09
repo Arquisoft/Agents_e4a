@@ -1,10 +1,10 @@
-package asw.participants.util;
+package asw.agents.util;
 
 import asw.Application;
+import asw.agents.factory.ErrorFactory;
+import asw.agents.factory.ErrorFactory.Errors;
+import asw.agents.webService.CsvReader;
 import asw.dbManagement.model.Agent;
-import asw.participants.factory.ErrorFactory;
-import asw.participants.factory.ErrorFactory.Errors;
-import asw.participants.webService.CsvReader;
 
 public class Assert {
 	

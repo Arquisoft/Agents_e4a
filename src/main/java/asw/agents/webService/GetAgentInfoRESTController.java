@@ -1,4 +1,4 @@
-package asw.participants.webService;
+package asw.agents.webService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -10,13 +10,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import asw.agents.GetAgentInfo;
+import asw.agents.util.Assert;
+import asw.agents.webService.request.PeticionInfoREST;
+import asw.agents.webService.responses.RespuestaInfoREST;
+import asw.agents.webService.responses.errors.ErrorResponse;
 import asw.dbManagement.GetAgent;
 import asw.dbManagement.model.Agent;
-import asw.participants.GetAgentInfo;
-import asw.participants.util.Assert;
-import asw.participants.webService.request.PeticionInfoREST;
-import asw.participants.webService.responses.RespuestaInfoREST;
-import asw.participants.webService.responses.errors.ErrorResponse;
 
 @RestController
 public class GetAgentInfoRESTController implements GetAgentInfo {

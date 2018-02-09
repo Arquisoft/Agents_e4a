@@ -1,4 +1,4 @@
-package asw.participants.util;
+package asw.agents.util;
 
 import java.util.Calendar;
 import java.util.Date;

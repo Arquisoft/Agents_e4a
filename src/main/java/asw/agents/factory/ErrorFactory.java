@@ -1,21 +1,21 @@
-package asw.participants.factory;
+package asw.agents.factory;
 
-import asw.participants.webService.responses.errors.ErrorResponse;
-import asw.participants.webService.responses.errors.IncorrectPasswordErrorResponse;
-import asw.participants.webService.responses.errors.KindDoNotMatchErrorResponse;
-import asw.participants.webService.responses.errors.PasswordDoNotMatchErrorResponse;
-import asw.participants.webService.responses.errors.RequiredEmailErrorResponse;
-import asw.participants.webService.responses.errors.RequiredKindErrorResponse;
-import asw.participants.webService.responses.errors.RequiredLocalizacionErrorResponse;
-import asw.participants.webService.responses.errors.RequiredLoginErrorResponse;
-import asw.participants.webService.responses.errors.RequiredNombreErrorResponse;
-import asw.participants.webService.responses.errors.RequiredPasswordErrorResponse;
-import asw.participants.webService.responses.errors.SameEmailErrorResponse;
-import asw.participants.webService.responses.errors.SameLocalizacionErrorResponse;
-import asw.participants.webService.responses.errors.SameNombreErrorResponse;
-import asw.participants.webService.responses.errors.UnknownErrorResponse;
-import asw.participants.webService.responses.errors.UserNotFoundResponse;
-import asw.participants.webService.responses.errors.WrongEmailStyleErrorResponse;
+import asw.agents.webService.responses.errors.ErrorResponse;
+import asw.agents.webService.responses.errors.IncorrectPasswordErrorResponse;
+import asw.agents.webService.responses.errors.KindDoNotMatchErrorResponse;
+import asw.agents.webService.responses.errors.PasswordDoNotMatchErrorResponse;
+import asw.agents.webService.responses.errors.RequiredEmailErrorResponse;
+import asw.agents.webService.responses.errors.RequiredKindErrorResponse;
+import asw.agents.webService.responses.errors.RequiredLocalizacionErrorResponse;
+import asw.agents.webService.responses.errors.RequiredLoginErrorResponse;
+import asw.agents.webService.responses.errors.RequiredNombreErrorResponse;
+import asw.agents.webService.responses.errors.RequiredPasswordErrorResponse;
+import asw.agents.webService.responses.errors.SameEmailErrorResponse;
+import asw.agents.webService.responses.errors.SameLocalizacionErrorResponse;
+import asw.agents.webService.responses.errors.SameNombreErrorResponse;
+import asw.agents.webService.responses.errors.UnknownErrorResponse;
+import asw.agents.webService.responses.errors.UserNotFoundResponse;
+import asw.agents.webService.responses.errors.WrongEmailStyleErrorResponse;
 
 //Creacion de los distintos tipos de error.
 public class ErrorFactory {

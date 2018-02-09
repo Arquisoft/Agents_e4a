@@ -1,12 +1,12 @@
-package asw.participants;
+package asw.agents;
 
 import org.springframework.http.ResponseEntity;
 
-import asw.participants.webService.request.PeticionChangeEmailREST;
-import asw.participants.webService.request.PeticionChangeLocalizacionREST;
-import asw.participants.webService.request.PeticionChangeNombreREST;
-import asw.participants.webService.request.PeticionChangePasswordREST;
-import asw.participants.webService.responses.RespuestaChangeInfoREST;
+import asw.agents.webService.request.PeticionChangeEmailREST;
+import asw.agents.webService.request.PeticionChangeLocalizacionREST;
+import asw.agents.webService.request.PeticionChangeNombreREST;
+import asw.agents.webService.request.PeticionChangePasswordREST;
+import asw.agents.webService.responses.RespuestaChangeInfoREST;
 
 public interface ChangeInfo {
 	/**

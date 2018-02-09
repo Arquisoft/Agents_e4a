@@ -1,4 +1,4 @@
-package asw.participants.webService.htmlController;
+package asw.agents.webService.htmlController;
 
 import javax.servlet.http.HttpSession;
 
@@ -12,10 +12,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
+import asw.agents.util.Assert;
+import asw.agents.webService.responses.errors.ErrorResponse;
 import asw.dbManagement.GetAgent;
 import asw.dbManagement.model.Agent;
-import asw.participants.util.Assert;
-import asw.participants.webService.responses.errors.ErrorResponse;
 
 @Controller
 public class GetAgentInfoHTMLController {

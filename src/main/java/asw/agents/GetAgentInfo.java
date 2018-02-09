@@ -1,9 +1,9 @@
-package asw.participants;
+package asw.agents;
 
 import org.springframework.http.ResponseEntity;
 
-import asw.participants.webService.request.PeticionInfoREST;
-import asw.participants.webService.responses.RespuestaInfoREST;
+import asw.agents.webService.request.PeticionInfoREST;
+import asw.agents.webService.responses.RespuestaInfoREST;
 
 public interface GetAgentInfo {
 

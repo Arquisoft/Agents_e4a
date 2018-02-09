@@ -1,4 +1,4 @@
-package asw.participants.webService;
+package asw.agents.webService;
  
 
  

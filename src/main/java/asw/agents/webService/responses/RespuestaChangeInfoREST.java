@@ -1,4 +1,4 @@
-package asw.participants.webService.responses;
+package asw.agents.webService.responses;
 
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;

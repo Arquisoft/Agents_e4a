@@ -1,4 +1,4 @@
-package asw.participants.webService.responses.errors;
+package asw.agents.webService.responses.errors;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
