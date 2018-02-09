@@ -59,15 +59,15 @@ public class Assert {
 	 * @param participant
 	 * @return devuelve false si no es null o excepcion
 	 */
-	public static boolean isParticipantNull(Agent participant){
-		if (participant == null) {
+	public static boolean isParticipantNull(Agent agent){
+		if (agent == null) {
 			throw ErrorFactory.getError(Errors.USER_NOT_FOUND);
 		}
 		return false;		
 	}
 	
-	public static boolean isPasswordCorrect(String password,Agent participant){
-		if (!password.equals(participant.getPassword())) {
+	public static boolean isPasswordCorrect(String password,Agent agent){
+		if (!password.equals(agent.getPassword())) {
 			throw ErrorFactory.getError(Errors.INCORRECT_PASSWORD_DO_NOT_MATCH);
 		}
 		return true;
@@ -117,14 +117,14 @@ public class Assert {
 		
 	}
 
-	public static boolean isKindCorrect(String kind,Agent participant){
+	public static boolean isKindCorrect(String kind,Agent agent){
 
 		//System.out.println(kind);
 		//System.out.println(participant.getTipoCode());
-		if(!Application.instancia.checkType(kind, participant)) {
+		if(!Application.instancia.checkType(kind, agent)) {
 			throw ErrorFactory.getError(Errors.INCORRECT_KIND_DO_NOT_MATCH);
 		}
-		participant.setKind(kind.toLowerCase());
+		agent.setKind(kind.toLowerCase());
 		return true;
 		/*if (!kind.equals(participant.getTipo())) {
 			throw ErrorFactory.getError(Errors.INCORRECT_KIND_DO_NOT_MATCH);
