@@ -18,3 +18,9 @@ Skeleton of agents module
 - Paloma Sierra Bonet (UO232919)
 - Pelayo Garcia Menendez (UO251765)
 
+# COMO USARLO
+
+Crear el proyecto en eclipse:
+  -- Clonar el proyecto mediante Git (mediante enlace) en una carpeta local Agents_e4a.
+  -- Importar el proyecto clonado a Eclipse.
+  -- Actualizar las correspondientes dependencias con Maven.
