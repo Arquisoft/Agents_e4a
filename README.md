@@ -21,6 +21,6 @@ Skeleton of agents module
 # COMO USARLO
 
 Crear el proyecto en eclipse:
-  -- Clonar el proyecto mediante Git (mediante enlace) en una carpeta local Agents_e4a.
-  -- Importar el proyecto clonado a Eclipse.
-  -- Actualizar las correspondientes dependencias con Maven.
+- Clonar el proyecto mediante Git (mediante enlace) en una carpeta local Agents_e4a.
+- Importar el proyecto clonado a Eclipse.
+- Actualizar las correspondientes dependencias con Maven.
