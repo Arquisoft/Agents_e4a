@@ -117,7 +117,7 @@ public class MainTest {
 				String.class);
 		assertThat(response.getBody(), equalTo(userNotFound));
 	}
-
+	
 	@Test
 	public void T5sensorDoNotExist() {
 		ResponseEntity<String> response = template.getForEntity(base.toString(), String.class);
