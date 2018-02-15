@@ -213,6 +213,12 @@ public class MainTest {
 
 		response = template.postForEntity(userURI, new PeticionInfoREST("isabel@gmail.com", "", "Person"), String.class);
 		assertThat(response.getBody(), equalTo(emptyPassword));
+		
+		response = template.postForEntity(userURI, new PeticionInfoREST("12332", "", "Sensor"), String.class);
+		assertThat(response.getBody(), equalTo(emptyPassword));
+		
+		response = template.postForEntity(userURI, new PeticionInfoREST("234534342", "", "Entity"), String.class);
+		assertThat(response.getBody(), equalTo(emptyPassword));
 	}
 
 	
