@@ -84,7 +84,9 @@ public class ChangeInfoHTMLController {
 	
 	@RequestMapping(value = "/confirmLocalizacion", method = RequestMethod.POST)
 	public String changeLocalizacion(HttpSession session, @RequestParam String localizacion, Model model) {
-		Assert.isLocalizacionEmpty(localizacion);
+		
+		Assert.isLocalizacionValid(localizacion);
+		//Assert.isLocalizacionEmpty(localizacion);
 
 		// Participant que se ha logeado antes
 		Agent p = (Agent) session.getAttribute("participant");

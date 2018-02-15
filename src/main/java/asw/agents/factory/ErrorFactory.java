@@ -16,12 +16,14 @@ import asw.agents.webService.responses.errors.SameNombreErrorResponse;
 import asw.agents.webService.responses.errors.UnknownErrorResponse;
 import asw.agents.webService.responses.errors.UserNotFoundResponse;
 import asw.agents.webService.responses.errors.WrongEmailStyleErrorResponse;
+import asw.agents.webService.responses.errors.WrongLocationStyleErrorResponse;
 
 //Creacion de los distintos tipos de error.
 public class ErrorFactory {
 
 	public static enum Errors {
 		INCORRECT_PASSWORD,
+		WRONG_LOCALIZATION_STYLE,
 		REQUIRED_EMAIL,
 		REQUIRED_PASSWORD,
 		USER_NOT_FOUND,
@@ -46,6 +48,8 @@ public class ErrorFactory {
 		switch (error) {
 		case INCORRECT_PASSWORD:
 			return new IncorrectPasswordErrorResponse();
+		case WRONG_LOCALIZATION_STYLE:
+			return new WrongLocationStyleErrorResponse();
 		case REQUIRED_EMAIL:
 			return new RequiredEmailErrorResponse();
 		case REQUIRED_PASSWORD:

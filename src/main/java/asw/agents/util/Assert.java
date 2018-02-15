@@ -42,6 +42,8 @@ public class Assert {
 	 * @param email
 	 * @return true si es valido.
 	 */
+	
+	
 	public static boolean isEmailValid(String email) {
 		String[] mailSplit = email.split("@");
 		if (mailSplit.length != 2) {
@@ -109,6 +111,35 @@ public class Assert {
 		
 	}
 
+	
+	public static boolean isLocalizacionValid(String localizacion) {
+		
+		//Permite que la localización sea un campo Vacio
+		if(localizacion.trim().isEmpty()){
+			return true;
+		}
+		
+		String[] locSplit=localizacion.split(",");
+		
+		if(locSplit.length !=2){
+			throw ErrorFactory.getError(Errors.WRONG_LOCALIZATION_STYLE);
+		}
+		
+
+		if(!locSplit[0].matches("-?\\d+(\\.\\d+)?")){
+			throw ErrorFactory.getError(Errors.WRONG_LOCALIZATION_STYLE);
+		}
+		
+		if(!locSplit[1].matches("-?\\d+(\\.\\d+)?")){
+			throw ErrorFactory.getError(Errors.WRONG_LOCALIZATION_STYLE);
+		}
+		return true;
+	}
+	
+	
+	
+	
+	
 	public static boolean isKindEmpty(String kind) {
 		if(kind.trim().isEmpty())
 			throw ErrorFactory.getError(Errors.REQUIRED_KIND);

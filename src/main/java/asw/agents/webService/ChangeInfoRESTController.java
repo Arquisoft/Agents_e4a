@@ -123,9 +123,11 @@ public class ChangeInfoRESTController implements ChangeInfo {
 		String password = datos.getPassword();
 		String nuevaLocalizacion = datos.getNuevaLocalizacion();
 		
-		Assert.isLocalizacionEmpty(localizacion);
 		
-		Assert.isLocalizacionEmpty(nuevaLocalizacion);
+		Assert.isLocalizacionValid(localizacion);
+		Assert.isLocalizacionValid(nuevaLocalizacion);
+		//Assert.isLocalizacionEmpty(localizacion);
+		//Assert.isLocalizacionEmpty(nuevaLocalizacion);
 		
 		Assert.isSameLocalizacion(localizacion, nuevaLocalizacion);
 
