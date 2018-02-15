@@ -108,7 +108,7 @@ public class MainTest {
 */
 	
 	@Test
-	public void T5participantDoNotExist() {
+	public void T5agentDoNotExist() {
 		ResponseEntity<String> response = template.getForEntity(base.toString(), String.class);
 		String userURI = base.toString() + "/user";
 		String userNotFound = "{\"reason\": \"User not found\"}";
