@@ -28,7 +28,6 @@ public class Agent implements Serializable{
 	public String tipo;
 	private int tipoCode;
 	private String password;
-	
 
 	
 		/**
@@ -47,10 +46,7 @@ public class Agent implements Serializable{
 		 * @param tipo
 		 * @param kindCode
 		 * @param password
-		 */
-
-		
-		
+		 */		
 		public Agent(String nombre, String email, String localizacion, int tipoCode,  String identificador, String password) {
 			super();
 			
@@ -61,8 +57,6 @@ public class Agent implements Serializable{
 			this.identificador = identificador;
 			this.username=identificador;
 			this.password = password;
-			
-
 		}
 
 		public String getNombre() {

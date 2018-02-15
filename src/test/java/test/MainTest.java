@@ -8,9 +8,7 @@ import static org.junit.Assert.assertTrue;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 import org.junit.Before;
 import org.junit.FixMethodOrder;
@@ -118,9 +116,29 @@ public class MainTest {
 		response = template.postForEntity(userURI, new PeticionInfoREST("13121312A", "000000", "Person"),
 				String.class);
 		assertThat(response.getBody(), equalTo(userNotFound));
-
 	}
 
+	@Test
+	public void T5sensorDoNotExist() {
+		ResponseEntity<String> response = template.getForEntity(base.toString(), String.class);
+		String userURI = base.toString() + "/user";
+		String userNotFound = "{\"reason\": \"User not found\"}";
+
+		response = template.postForEntity(userURI, new PeticionInfoREST("13121312A", "000000", "Sensor"),
+				String.class);
+		assertThat(response.getBody(), equalTo(userNotFound));
+	}
+	
+	@Test
+	public void T5entityDoNotExist() {
+		ResponseEntity<String> response = template.getForEntity(base.toString(), String.class);
+		String userURI = base.toString() + "/user";
+		String userNotFound = "{\"reason\": \"User not found\"}";
+
+		response = template.postForEntity(userURI, new PeticionInfoREST("13121312A", "000000", "Entity"),
+				String.class);
+		assertThat(response.getBody(), equalTo(userNotFound));
+	}
 	
 	@Test
 	public void T6incorrectPassword() {
