@@ -1,5 +1,8 @@
 package asw.agents.util;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import asw.Application;
 import asw.agents.factory.ErrorFactory;
 import asw.agents.factory.ErrorFactory.Errors;
@@ -134,6 +137,27 @@ public class Assert {
 			throw ErrorFactory.getError(Errors.WRONG_LOCALIZATION_STYLE);
 		}
 		return true;
+	}
+	
+	
+	//Comprueba si el Dni es correcto(Comprueba si la letra es acorde a los números). Los Dni actuales de los ejemplos no lo son.
+	public static boolean isDniValid(String Dni){
+		Pattern pattern=Pattern.compile("(\\d{1,8})([TRWAGMYFPDXBNJZSQVHLCKEtrwagmyfpdxbnjzsqvhlcke])");
+        Matcher matcher=pattern.matcher(Dni);
+        if(matcher.matches()){
+            String letra=matcher.group(2);
+            String letras="TRWAGMYFPDXBNJZSQVHLCKE";
+            int index=Integer.parseInt(matcher.group(1));
+            index=index%23;
+            String reference=letras.substring(index,index+1);
+            if(reference.equalsIgnoreCase(letra)){
+            	return true;
+            }else{
+            	throw ErrorFactory.getError(Errors.WRONG_DNI_STYLE);
+            }
+        }else{
+        	throw ErrorFactory.getError(Errors.WRONG_DNI_STYLE);
+        }
 	}
 	
 	

@@ -15,6 +15,7 @@ import asw.agents.webService.responses.errors.SameLocalizacionErrorResponse;
 import asw.agents.webService.responses.errors.SameNombreErrorResponse;
 import asw.agents.webService.responses.errors.UnknownErrorResponse;
 import asw.agents.webService.responses.errors.UserNotFoundResponse;
+import asw.agents.webService.responses.errors.WrongDNIStyleErrorResponse;
 import asw.agents.webService.responses.errors.WrongEmailStyleErrorResponse;
 import asw.agents.webService.responses.errors.WrongLocationStyleErrorResponse;
 
@@ -36,7 +37,9 @@ public class ErrorFactory {
 		REQUIRED_NOMBRE,
 		SAME_NOMBRE,
 		REQUIRED_LOCALIZACION,
+		WRONG_DNI_STYLE,
 		SAME_LOCALIZACION
+		
 	}
 
 	// Generar Constructor privado no queremos que se pueda tener varias
@@ -74,6 +77,8 @@ public class ErrorFactory {
 			return new SameNombreErrorResponse();
 		case REQUIRED_LOCALIZACION:
 			return new RequiredLocalizacionErrorResponse();
+		case WRONG_DNI_STYLE:
+			return new WrongDNIStyleErrorResponse();
 		case SAME_LOCALIZACION:
 			return new SameLocalizacionErrorResponse();	
 		default:// en caso de no conocer el error.
