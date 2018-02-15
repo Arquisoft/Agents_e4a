@@ -23,17 +23,12 @@ public class Agent implements Serializable{
 	@Column(unique = true) private String identificador;
 	private String nombre;
 	@Column(nullable = false) private String email;	
-	private String direccionPostal;
+	private String localizacion;
 	private String username;
 	public String tipo;
+	private int tipoCode;
 	private String password;
-	private int type;
 	
-//	private String apellidos;
-//	private Date fechaNacimiento;
-//
-//	private String nacionalidad;
-//	private String dni;
 
 	
 		/**
@@ -50,28 +45,24 @@ public class Agent implements Serializable{
 		 * @param email
 		 * @param identificador
 		 * @param tipo
-		 * @param tipoCode
+		 * @param kindCode
 		 * @param password
 		 */
 
 		
 		
-		public Agent(String nombre,  String apellidos, String email, Date fechaNacimiento,
-				String direccionPostal, String nacionalidad, String DNI,
-				int tipoCode, String password, String identificador, String username) {
+		public Agent(String nombre, String email, String localizacion, int tipoCode,  String identificador, String password) {
 			super();
-			this.nombre = nombre;
-			//this.apellidos=apellidos;
-			this.username=username;
-			//this.fechaNacimiento=fechaNacimiento;
-			this.direccionPostal = direccionPostal;
-			this.email = email;
-//			this.nacionalidad=nacionalidad;
-//			this.dni=DNI;
 			
+			this.nombre = nombre;
+			this.email = email;
+			this.localizacion=localizacion;
+			this.tipoCode = tipoCode;
 			this.identificador = identificador;
-			this.type = tipoCode;
+			this.username=identificador;
 			this.password = password;
+			
+
 		}
 
 		public String getNombre() {
@@ -83,11 +74,11 @@ public class Agent implements Serializable{
 		}
 
 		public String getLocalizacion() {
-			return direccionPostal;
+			return localizacion;
 		}
 
 		public void setLocalizacion(String localizacion) {
-			this.direccionPostal = localizacion;
+			this.localizacion = localizacion;
 		}
 
 		public String getEmail() {
@@ -123,11 +114,11 @@ public class Agent implements Serializable{
 		}
 
 		public int getTipoCode() {
-			return type;
+			return tipoCode;
 		}
 
 		public void setTipoCode(int tipoCode) {
-			this.type = tipoCode;
+			this.tipoCode = tipoCode;
 		}
 
 		public String getPassword() {
@@ -139,53 +130,15 @@ public class Agent implements Serializable{
 		}
 		
 
-		public String getDireccionPostal() {
-			return direccionPostal;
-		}
-
-		public void setDireccionPostal(String direccionPostal) {
-			this.direccionPostal = direccionPostal;
-		}
-
 		public int getType() {
-			return type;
+			return tipoCode;
 		}
 
 		public void setType(int type) {
-			this.type = type;
+			this.tipoCode = type;
 		}
 
-//		public String getApellidos() {
-//			return apellidos;
-//		}
-//
-//		public void setApellidos(String apellidos) {
-//			this.apellidos = apellidos;
-//		}
-//
-//		public Date getFechaNacimiento() {
-//			return fechaNacimiento;
-//		}
-//
-//		public void setFechaNacimiento(Date fechaNacimiento) {
-//			this.fechaNacimiento = fechaNacimiento;
-//		}
-//
-//		public String getNacionalidad() {
-//			return nacionalidad;
-//		}
-//
-//		public void setNacionalidad(String nacionalidad) {
-//			this.nacionalidad = nacionalidad;
-//		}
-//
-//		public String getDni() {
-//			return dni;
-//		}
-//
-//		public void setDni(String dni) {
-//			this.dni = dni;
-//		}
+
 
 		@Override
 		public int hashCode() {
@@ -216,8 +169,8 @@ public class Agent implements Serializable{
 
 		@Override
 		public String toString() {
-			return "Agent [nombre=" + nombre + ", localizacion=" + direccionPostal + ", email=" + email
-					+ ", identificador=" + identificador + ", tipo=" + tipo + ", tipoCode=" + type + ", password="
+			return "Agent [nombre=" + nombre + ", localizacion=" + localizacion + ", email=" + email
+					+ ", identificador=" + identificador + ", tipo=" + tipo + ", tipoCode=" + tipoCode + ", password="
 					+ password + "]";
 		}
 

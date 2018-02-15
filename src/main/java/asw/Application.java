@@ -32,18 +32,21 @@ public class Application {
 		instancia=CsvReader.getInstance("src/main/resources/maestro.csv");
 		
 		return (args) -> {
-			// Inserción en la base de datos
-			
-			repository.save(new Agent("Paco Gómez", "Francisco", "paco@hotmail.com", date, "-3.7339100,40.4416800", "Español", "13864928P", 1, "123456","13864928P","13864928P"));
 			
 			
 			// Inserción en la base de datos
-			repository.save(new Agent("Pepe Fernández", "Francisco", "pepe@gmail.com", date, "1.7339100,26.4416800", "Español", "87654321B", 1, "123456","87654321B","87654321B"));
+			repository.save(new Agent("Paco Gómez", "paco@hotmail.com", "-3.7339100,40.4416800", 1, "13864928P", "123456"));
+			
+			
+			// Inserción en la base de datos
+			repository.save(new Agent("Pepe Fernández", "pepe@gmail.com", "1.7339100,26.4416800", 1, "87654321B", "123456"));
 			
 			
 
 			// Inserción en la base de datos
-			repository.save(new Agent("Carmen López", "Francisco", "carmen@yahoo.com", date, "5.7339100,48.4416800", "Español", "11223344C", 1, "123456","11223344C","11223344C"));
+			repository.save(new Agent("Carmen López", "carmen@yahoo.com", "5.7339100,48.4416800", 1, "11223344C", "123456"));
+			
+		
 			
 		};
 	}
