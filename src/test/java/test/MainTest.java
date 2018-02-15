@@ -440,7 +440,8 @@ public class MainTest {
 		assertThat(response.getBody(), equalTo(passwordIncorrect));
 	}
 
-	/*
+	
+	
 	@Test
 	public void T24testHtmlController() {
 		ResponseEntity<String> response = template.getForEntity(base.toString(), String.class);
@@ -449,13 +450,16 @@ public class MainTest {
 		response = template.getForEntity(userURI, String.class);
 		assertThat(response.getBody().replace(" ", "").replace("\n", "").replace("\t", ""),
 				equalTo(new String("<!DOCTYPEHTML><html><head><metacharset=\"UTF-8\"/><title>Login</title></head><body>"
-						+ "<h1>Login</h1><formmethod=\"POST\"action=\"login\"><table><tr><td><labelfor=\"email\">"
-						+ "<strong>Usuario:</strong></label></td><td><inputtype=\"text\"id=\"email\"name=\"email\"/>"
-						+ "</td></tr><tr><td><labelfor=\"password\"><strong>Contraseña:</strong></label></td><td>"
-						+ "<inputtype=\"password\"id=\"password\"name=\"password\"/></td></tr><tr><td><buttontype="
+						+ "<h1>Acceso</h1><formmethod=\"POST\"action=\"login\"><table><tr><td><labelfor=\"login\">"
+						+ "<strong>Login:</strong></label></td><td><inputtype=\"text\"id=\"login\"name=\"login\"/>"
+						+ "</td></tr><tr><td><labelfor=\"password\"><strong>Password:</strong></label></td><td>"
+						+ "<inputtype=\"password\"id=\"password\"name=\"password\"/></td></tr><tr><td><labelfor=\"kind\">"
+						+ "<strong>Kind:</strong></label></td><td><inputtype=\"text\"id=\"kind\"name=\"kind\"/></td></tr><tr><td><buttontype="
 						+ "\"submit\"id=\"login\">Entrar</button></td></tr></table></form></body></html>").replace(" ",
 								"")));
+
 	}
+	/*
 	*/
 	
 	/*
