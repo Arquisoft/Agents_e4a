@@ -34,7 +34,7 @@ public class UpdateInfoImpl implements UpdateInfo {
 	}
 
 	/**
-	 * Método que permite la actualización del email del Participante
+	 * Método que permite la actualización del email del Agente
 	 * Se comprueba que el email no esté vacío
 	 */
 	@Override
