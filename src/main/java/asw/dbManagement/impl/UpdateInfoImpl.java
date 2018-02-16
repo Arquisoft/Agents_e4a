@@ -18,17 +18,17 @@ public class UpdateInfoImpl implements UpdateInfo {
 	}
 	
 	/**
-	 * Método que permite la actualización de la contraseña del Participante
+	 * Método que permite la actualización de la contraseña del Agente
 	 * Se comprueba que las contraseñas no estén vacías, sean distintas y 
 	 * la actual coincida con la del participante
 	 */
 	@Override
-	public void updatePassword(Agent participant, String password, String newPassword) {
+	public void updatePassword(Agent agente, String password, String newPassword) {
 		
 		if (password != null && newPassword != null && !(password.equals(newPassword))
-				&& participant.getPassword().equals(password)) {
-			participant.setPassword(newPassword);
-			this.repository.save(participant);
+				&& agente.getPassword().equals(password)) {
+			agente.setPassword(newPassword);
+			this.repository.save(agente);
 		}
 		
 	}
@@ -38,31 +38,31 @@ public class UpdateInfoImpl implements UpdateInfo {
 	 * Se comprueba que el email no esté vacío
 	 */
 	@Override
-	public void updateEmail(Agent participant, String email) {
+	public void updateEmail(Agent agente, String email) {
 		if(email != null){
-			participant.setEmail(email);
-			this.repository.save(participant);
+			agente.setEmail(email);
+			this.repository.save(agente);
 		}
 	}
 
 	/**
-	 * Método que permite la actualización del nombre del Participante
+	 * Método que permite la actualización del nombre del Agente
 	 * Se comprueba que el nombre no esté vacío
 	 */
 	@Override
-	public void updateName(Agent participant, String nuevoNombre) {
+	public void updateName(Agent agente, String nuevoNombre) {
 		if(nuevoNombre != null){
-			participant.setNombre(nuevoNombre);
-			this.repository.save(participant);
+			agente.setNombre(nuevoNombre);
+			this.repository.save(agente);
 		}
 		
 	}
 
 	@Override
-	public void updateLocalizacion(Agent participant, String nuevaLocalizacion) {
+	public void updateLocalizacion(Agent agente, String nuevaLocalizacion) {
 		if(nuevaLocalizacion != null){
-			participant.setLocalizacion(nuevaLocalizacion);
-			this.repository.save(participant);
+			agente.setLocalizacion(nuevaLocalizacion);
+			this.repository.save(agente);
 		}
 		
 	}
