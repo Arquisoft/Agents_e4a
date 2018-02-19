@@ -15,7 +15,7 @@ public class Assert {
 	
 
 	/**
-	 * 
+	 * Método que comprueba si el email está vaciio
 	 * @param email
 	 * @return excepcion si esta vacio
 	 */
@@ -25,6 +25,11 @@ public class Assert {
 		else
 			return false;
 	}
+	/**
+	 * Método que comprueba si la contraseña está vacia
+	 * @param password
+	 * @return exception si esta vacio, false si no esta vacio
+	 */
 	
 	public static boolean isPasswordEmpty(String password) {
 		if(password.trim().isEmpty())
@@ -32,6 +37,11 @@ public class Assert {
 		else
 			return false;
 	}
+	/**
+	 * Método que comprueba si el nombre está vacio
+	 * @param nombre
+	 * @return excepcion si esta vacio, false si no esta vacio
+	 */
 	
 	public static boolean isNombreEmpty(String nombre) {
 		if(nombre.trim().isEmpty())
@@ -60,17 +70,23 @@ public class Assert {
 	}
 	
 	/**
-	 * 
-	 * @param participant
+	 * Metodo que comprueba si el agente es null
+	 * @param agent
 	 * @return devuelve false si no es null o excepcion
 	 */
-	public static boolean isParticipantNull(Agent agent){
+	public static boolean isAgentNull(Agent agent){
 		if (agent == null) {
 			throw ErrorFactory.getError(Errors.USER_NOT_FOUND);
 		}
 		return false;		
 	}
 	
+	/**
+	 * Metodo que comprueba que la contraseña sea correcta
+	 * @param password
+	 * @param agent
+	 * @return excepcion si es incorrecta, true si es correcta
+	 */
 	public static boolean isPasswordCorrect(String password,Agent agent){
 		if (!password.equals(agent.getPassword())) {
 			throw ErrorFactory.getError(Errors.INCORRECT_PASSWORD_DO_NOT_MATCH);
@@ -78,6 +94,12 @@ public class Assert {
 		return true;
 	}
 	
+	/**
+	 * Metodo que comprueba que las dos contraseñas sean iguales
+	 * @param password
+	 * @param password2
+	 * @return
+	 */
 	public static boolean isSamePassword(String password, String password2){
 		if (password.equals(password2)) {
 			throw ErrorFactory.getError(Errors.INCORRECT_PASSWORD);
@@ -85,13 +107,24 @@ public class Assert {
 		return true;
 	}
 
+	/**
+	 * Metodo que compueba que los dos email son iguales
+	 * @param email
+	 * @param email2
+	 * @return
+	 */
 	public static boolean isSameEmail(String email, String email2){
 		if (email.equals(email2)) {
 			throw ErrorFactory.getError(Errors.SAME_EMAIL);
 		}
 		return true;
 	}
-	
+	/**
+	 * Metodo que comprueba que los dos nombres son iguales 
+	 * @param nombre
+	 * @param nombre2
+	 * @return 
+	 */
 	public static boolean isSameNombre(String nombre, String nombre2){
 		if (nombre.equals(nombre2)) {
 			throw ErrorFactory.getError(Errors.SAME_NOMBRE);
@@ -99,13 +132,22 @@ public class Assert {
 		return true;
 	}
 
+	/**
+	 * Metodo que comprueba si el campo login se encuentra vacio
+	 * @param login
+	 * @return
+	 */
 	public static boolean isLoginEmpty(String login) {
 		if(login.trim().isEmpty())
 			throw ErrorFactory.getError(Errors.REQUIRED_LOGIN);
 		else
 			return false;
 	}
-	
+	/***
+	 * Metodo que comprueba que la localizacion esta vacia
+	 * @param localizacion
+	 * @return
+	 */
 	public static boolean isLocalizacionEmpty(String localizacion) {
 		if(localizacion.trim().isEmpty())
 			throw ErrorFactory.getError(Errors.REQUIRED_LOCALIZACION);
@@ -114,7 +156,11 @@ public class Assert {
 		
 	}
 
-	
+	/**
+	 * Metodo que comprueba que la localizacion sea valida
+	 * @param localizacion
+	 * @return
+	 */
 	public static boolean isLocalizacionValid(String localizacion) {
 		
 		//Permite que la localización sea un campo Vacio
@@ -140,7 +186,11 @@ public class Assert {
 	}
 	
 	
-	//Comprueba si el Dni es correcto(Comprueba si la letra es acorde a los números). Los Dni actuales de los ejemplos no lo son.
+	/**
+	 * Comprueba si el Dni es correcto(Comprueba si la letra es acorde a los números). Los Dni actuales de los ejemplos no lo son.
+	 * @param Dni
+	 * @return
+	 */
 	public static boolean isDniValid(String Dni){
 		Pattern pattern=Pattern.compile("(\\d{1,8})([TRWAGMYFPDXBNJZSQVHLCKEtrwagmyfpdxbnjzsqvhlcke])");
         Matcher matcher=pattern.matcher(Dni);
@@ -163,7 +213,11 @@ public class Assert {
 	
 	
 	
-	
+	/**
+	 * Metodo para comprobar si el kind(tipo) esta vacio
+	 * @param kind
+	 * @return
+	 */
 	public static boolean isKindEmpty(String kind) {
 		if(kind.trim().isEmpty())
 			throw ErrorFactory.getError(Errors.REQUIRED_KIND);
@@ -172,6 +226,12 @@ public class Assert {
 		
 	}
 
+	/**
+	 * Metodo que comprueba si el kind(tipo ) es correcto
+	 * @param kind
+	 * @param agent
+	 * @return
+	 */
 	public static boolean isKindCorrect(String kind,Agent agent){
 
 		//System.out.println(kind);
@@ -186,7 +246,12 @@ public class Assert {
 		}
 		return true;*/
 	}
-
+/**
+ * Metodo para comprobar si dos localizaciones son iguales
+ * @param localizacion
+ * @param nuevaLocalizacion
+ * @return
+ */
 	public static boolean isSameLocalizacion(String localizacion, String nuevaLocalizacion) {
 		if (localizacion.equals(nuevaLocalizacion)) {
 			throw ErrorFactory.getError(Errors.SAME_LOCALIZACION);

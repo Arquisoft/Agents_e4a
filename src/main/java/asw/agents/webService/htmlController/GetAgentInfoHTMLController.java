@@ -38,7 +38,7 @@ public class GetAgentInfoHTMLController {
 
 		Agent participant = getAgent.getAgent(login);
 
-		Assert.isParticipantNull(participant);
+		Assert.isAgentNull(participant);
 		Assert.isPasswordCorrect(password, participant);
 		Assert.isKindCorrect(kind, participant);
 
