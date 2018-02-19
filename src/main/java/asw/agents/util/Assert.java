@@ -233,9 +233,6 @@ public class Assert {
 	 * @return
 	 */
 	public static boolean isKindCorrect(String kind,Agent agent){
-
-		//System.out.println(kind);
-		//System.out.println(participant.getTipoCode());
 		if(!Application.instancia.checkType(kind, agent)) {
 			throw ErrorFactory.getError(Errors.INCORRECT_KIND_DO_NOT_MATCH);
 		}

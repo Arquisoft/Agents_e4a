@@ -2,12 +2,12 @@ package asw.dbManagement.model;
 
 
 import java.io.Serializable;
-import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 
 @Entity
@@ -20,13 +20,14 @@ public class Agent implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
 	@Id
-	@Column(unique = true) private String identificador;
+	@Column(unique = true)
+	private String id;
 	private String nombre;
-	@Column(nullable = false) private String email;	
+	private String email;	
 	private String localizacion;
-	private String username;
+	@Transient
 	public String tipo;
-	private int tipoCode;
+	private int type;
 	private String password;
 
 	
@@ -48,14 +49,12 @@ public class Agent implements Serializable{
 		 * @param password
 		 */		
 		public Agent(String nombre, String email, String localizacion, int tipoCode,  String identificador, String password) {
-			super();
-			
+			super();			
 			this.nombre = nombre;
 			this.email = email;
 			this.localizacion=localizacion;
-			this.tipoCode = tipoCode;
-			this.identificador = identificador;
-			this.username=identificador;
+			this.type = tipoCode;
+			this.id = identificador;
 			this.password = password;
 		}
 
@@ -84,20 +83,13 @@ public class Agent implements Serializable{
 		}
 
 		public String getIdentificador() {
-			return identificador;
+			return id;
 		}
 
 		public void setIdentificador(String identificador) {
-			this.identificador = identificador;
+			this.id = identificador;
 		}
 
-		public String getUsername() {
-			return username;
-		}
-
-		public void setUsername(String tipo) {
-			this.username = tipo;
-		}
 		
 		public String getKind() {
 			return tipo;
@@ -108,11 +100,11 @@ public class Agent implements Serializable{
 		}
 
 		public int getTipoCode() {
-			return tipoCode;
+			return type;
 		}
 
 		public void setTipoCode(int tipoCode) {
-			this.tipoCode = tipoCode;
+			this.type = tipoCode;
 		}
 
 		public String getPassword() {
@@ -125,23 +117,21 @@ public class Agent implements Serializable{
 		
 
 		public int getType() {
-			return tipoCode;
+			return type;
 		}
 
 		public void setType(int type) {
-			this.tipoCode = type;
+			this.type = type;
 		}
-
-
 
 		@Override
 		public int hashCode() {
 			final int prime = 31;
 			int result = 1;
-			result = prime * result + ((identificador == null) ? 0 : identificador.hashCode());
+			result = prime * result + ((id == null) ? 0 : id.hashCode());
 			return result;
 		}
-	
+
 		@Override
 		public boolean equals(Object obj) {
 			if (this == obj)
@@ -151,21 +141,19 @@ public class Agent implements Serializable{
 			if (getClass() != obj.getClass())
 				return false;
 			Agent other = (Agent) obj;
-			if (identificador == null) {
-				if (other.identificador != null)
+			if (id == null) {
+				if (other.id != null)
 					return false;
-			} else if (!identificador.equals(other.identificador))
+			} else if (!id.equals(other.id))
 				return false;
 			return true;
 		}
-		
-		
 
 		@Override
 		public String toString() {
-			return "Agent [nombre=" + nombre + ", localizacion=" + localizacion + ", email=" + email
-					+ ", identificador=" + identificador + ", tipo=" + tipo + ", tipoCode=" + tipoCode + ", password="
-					+ password + "]";
+			return "Agent [id=" + id + ", nombre=" + nombre + ", email=" + email + ", localizacion=" + localizacion
+					+ ", tipo=" + tipo + ", type=" + type + ", password=" + password + "]";
 		}
+	
 
 }

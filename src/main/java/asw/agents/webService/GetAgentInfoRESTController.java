@@ -3,6 +3,7 @@ package asw.agents.webService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,14 +16,19 @@ import asw.agents.util.Assert;
 import asw.agents.webService.request.PeticionInfoREST;
 import asw.agents.webService.responses.RespuestaInfoREST;
 import asw.agents.webService.responses.errors.ErrorResponse;
-import asw.dbManagement.GetAgent;
+import asw.dbManagement.impl.GetAgentImpl;
 import asw.dbManagement.model.Agent;
 
 @RestController
 public class GetAgentInfoRESTController implements GetAgentInfo {
 
 	@Autowired
-	private GetAgent getParticipant;
+	private GetAgentImpl getParticipant;
+	
+	@RequestMapping("/mark/list")
+	public String getList(Model model){
+		return getParticipant.getAgents().toString();
+	}
 
 	@Override
 	@RequestMapping(value = "/user", method = RequestMethod.POST, headers = { "Accept=application/json",

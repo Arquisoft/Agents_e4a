@@ -14,19 +14,20 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 
 import asw.agents.util.Assert;
 import asw.agents.webService.responses.errors.ErrorResponse;
-import asw.dbManagement.GetAgent;
+import asw.dbManagement.impl.GetAgentImpl;
 import asw.dbManagement.model.Agent;
 
 @Controller
 public class GetAgentInfoHTMLController {
 
 	@Autowired
-	private GetAgent getAgent;
+	private GetAgentImpl getAgent;
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String inicalicerLogin(Model model) {
 		return "login";
 	}
+	
 
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public String getLogin(HttpSession session, @RequestParam String login, @RequestParam String password, @RequestParam String kind,

@@ -18,15 +18,15 @@ import asw.agents.webService.request.PeticionChangeNombreREST;
 import asw.agents.webService.request.PeticionChangePasswordREST;
 import asw.agents.webService.responses.RespuestaChangeInfoREST;
 import asw.agents.webService.responses.errors.ErrorResponse;
-import asw.dbManagement.GetAgent;
 import asw.dbManagement.UpdateInfo;
+import asw.dbManagement.impl.GetAgentImpl;
 import asw.dbManagement.model.Agent;
 
 @RestController
 public class ChangeInfoRESTController implements ChangeInfo {
 
 	@Autowired
-	private GetAgent getParticipant;
+	private GetAgentImpl getParticipant;
 	@Autowired
 	private UpdateInfo updateInfo;
 

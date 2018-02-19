@@ -82,7 +82,6 @@ public class CsvReader {
      int typeNumeric = 0; 
      int contador = 1;
      for(String str:suitableTypes) { 
-       System.out.println(str+" me"); 
        if(type.toLowerCase().equals(str.toLowerCase())) { 
          typeNumeric = contador;
          break; 

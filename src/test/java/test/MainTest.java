@@ -35,7 +35,7 @@ import asw.Application;
 import asw.agents.webService.request.PeticionChangeEmailREST;
 import asw.agents.webService.request.PeticionChangePasswordREST;
 import asw.agents.webService.request.PeticionInfoREST;
-import asw.dbManagement.GetAgent;
+import asw.dbManagement.impl.GetAgentImpl;
 import asw.dbManagement.model.Agent;
 
 @SuppressWarnings("deprecation")
@@ -53,7 +53,7 @@ public class MainTest {
 	private RestTemplate template;
 
 	@Autowired
-	private GetAgent getAgent;
+	private GetAgentImpl getAgent;
 
 	@Before
 	public void setUp() throws Exception {
@@ -87,7 +87,7 @@ public class MainTest {
 	}
 
 	
-	/*@Test
+	@Test
 	public void T4agentExistAndCorrectPasssword() {
 		ResponseEntity<String> response = template.getForEntity(base.toString(), String.class);
 		String userURI = base.toString() + "/user";
@@ -105,7 +105,6 @@ public class MainTest {
 		assertThat(response.getBody(), equalTo(
 				"{\"location\":\"5.7339100,48.4416800\",\"email\":\"carmen@yahoo.com\",\"id\":\"11223344C\",\"kindCode\":1,\"kind\":\"person\",\"nombre\":\"Carmen López\"}"));
 	}
-*/
 	
 	@Test
 	public void T5agentDoNotExist() {

@@ -12,7 +12,7 @@ public class RespuestaInfoREST {
 	private String location;
 	private String email;
 	private String id;
-	private String tipo;
+	private String kind;
 	private int kindCode;
 	
 	public RespuestaInfoREST() {}
@@ -64,12 +64,12 @@ public class RespuestaInfoREST {
 	}
 
 	public String getKind() {
-		return tipo;
+		return kind;
 	}
 
 	@XmlElement
 	public void setKind(String kind) {
-		this.tipo = kind;
+		this.kind = kind;
 	}
 
 	public int getKindCode() {

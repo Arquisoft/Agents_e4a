@@ -10,7 +10,6 @@ import asw.dbManagement.model.Agent;
 import asw.dbManagement.repository.AgentRepository;
 
 import java.text.ParseException;
-import java.util.Date;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
@@ -23,13 +22,13 @@ public class Application {
 	public static CsvReader instancia;
 
 	public static void main(String[] args) {
+		instancia=CsvReader.getInstance("src/main/resources/maestro.csv");
 		SpringApplication.run(Application.class, args);
 	}
 
 	@Bean
 	public CommandLineRunner initDB(AgentRepository repository) throws ParseException {
-		Date date = new Date(System.currentTimeMillis());
-		instancia=CsvReader.getInstance("src/main/resources/maestro.csv");
+		
 		
 		return (args) -> {
 			
@@ -45,8 +44,6 @@ public class Application {
 
 			// Inserción en la base de datos
 			repository.save(new Agent("Carmen López", "carmen@yahoo.com", "5.7339100,48.4416800", 1, "11223344C", "123456"));
-			
-		
 			
 		};
 	}
