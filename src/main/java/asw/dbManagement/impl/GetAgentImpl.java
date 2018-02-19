@@ -20,7 +20,7 @@ public class GetAgentImpl implements GetAgent {
 	
 	
 	/**
-	 * Método que devuelve el Participante buscado por identificador
+	 * Método que devuelve el Agente buscado por identificador
 	 * Hace uso del método findByIdentificador (mapeador)
 	 */
 	@Override

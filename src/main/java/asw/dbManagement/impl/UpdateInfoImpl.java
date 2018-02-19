@@ -18,9 +18,9 @@ public class UpdateInfoImpl implements UpdateInfo {
 	}
 	
 	/**
-	 * Método que permite la actualización de la contraseña del Participante
+	 * Método que permite la actualización de la contraseña del Agente
 	 * Se comprueba que las contraseñas no estén vacías, sean distintas y 
-	 * la actual coincida con la del participante
+	 * la actual coincida con la del agente
 	 */
 	@Override
 	public void updatePassword(Agent participant, String password, String newPassword) {

@@ -69,7 +69,7 @@ public class ChangeInfoHTMLController {
 	public String changeNombre(HttpSession session, @RequestParam String nombre, Model model) {
 		Assert.isNombreEmpty(nombre);
 
-		// Participant que se ha logeado antes
+		// Agente que se ha logeado antes
 		Agent p = (Agent) session.getAttribute("participant");
 		Assert.isAgentNull(p);
 		Assert.isSameEmail(nombre, p.getNombre());
