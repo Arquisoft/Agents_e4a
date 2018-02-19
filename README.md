@@ -27,10 +27,10 @@ Crear el proyecto en eclipse:
 
 # Pasos para ejecución
 
--Clonar proyecto: git clone https://github.com/Arquisoft/Agents_e4a.git
--Compilar maven: (en la carpeta donde está el pom) mvn compile
--Generar el jar: mvn package
--Ejecutar: C:\Users\UO232919\Desktop\Agents_e4a>mvn spring-boot:run
+- Clonar proyecto: git clone https://github.com/Arquisoft/Agents_e4a.git
+- Compilar maven: (en la carpeta donde está el pom) mvn compile
+- Generar el jar: mvn package
+- Ejecutar: C:\Users\UO232919\Desktop\Agents_e4a>mvn spring-boot:run
 
 
 
