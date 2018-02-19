@@ -34,7 +34,7 @@ public class ChangeInfoHTMLController {
 		Assert.isPasswordEmpty(newPassword);
 		Assert.isSamePassword(password, newPassword);
 
-		// Participant que se ha logeado antes
+		// Agente que se ha logeado antes
 		Agent p = (Agent) session.getAttribute("participant");
 		Assert.isAgentNull(p);
 		Assert.isPasswordCorrect(password, p);
@@ -52,7 +52,7 @@ public class ChangeInfoHTMLController {
 		Assert.isEmailEmpty(email);
 		Assert.isEmailValid(email);
 
-		// Participant que se ha logeado antes
+		// Agente que se ha logeado antes
 		Agent p = (Agent) session.getAttribute("participant");
 		Assert.isAgentNull(p);
 		Assert.isSameEmail(email, p.getEmail());
@@ -88,7 +88,7 @@ public class ChangeInfoHTMLController {
 		Assert.isLocalizacionValid(localizacion);
 		//Assert.isLocalizacionEmpty(localizacion);
 
-		// Participant que se ha logeado antes
+		// Agente que se ha logeado antes
 		Agent p = (Agent) session.getAttribute("participant");
 		Assert.isAgentNull(p);
 		Assert.isSameLocalizacion(localizacion, p.getNombre());
