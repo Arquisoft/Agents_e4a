@@ -11,7 +11,6 @@ import javax.persistence.Transient;
 
 
 @Entity
-@Table(name = "Agent")
 public class Agent implements Serializable{
 
 	/**

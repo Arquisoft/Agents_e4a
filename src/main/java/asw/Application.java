@@ -26,7 +26,7 @@ public class Application {
 		SpringApplication.run(Application.class, args);
 	}
 
-	@Bean
+	/*@Bean
 	public CommandLineRunner initDB(AgentRepository repository) throws ParseException {
 		
 		
@@ -46,5 +46,5 @@ public class Application {
 			repository.save(new Agent("Carmen López", "carmen@yahoo.com", "5.7339100,48.4416800", 1, "11223344C", "123456"));
 			
 		};
-	}
+	}*/
 }
