@@ -35,7 +35,7 @@ public class ChangeInfoHTMLController {
 		Assert.isSamePassword(password, newPassword);
 
 		// Agente que se ha logeado antes
-		Agent p = (Agent) session.getAttribute("participant");
+		Agent p = (Agent) session.getAttribute("agent");
 		Assert.isAgentNull(p);
 		Assert.isPasswordCorrect(password, p);
 
@@ -44,7 +44,7 @@ public class ChangeInfoHTMLController {
 
 		// Mensaje a mostrar en HTML
 		model.addAttribute("info", "Contraseña actualizada correctamente");
-		return "datosParticipant";
+		return "datosAgent";
 	}
 	
 	@RequestMapping(value = "/confirmEmail", method = RequestMethod.POST)
@@ -53,7 +53,7 @@ public class ChangeInfoHTMLController {
 		Assert.isEmailValid(email);
 
 		// Agente que se ha logeado antes
-		Agent p = (Agent) session.getAttribute("participant");
+		Agent p = (Agent) session.getAttribute("agent");
 		Assert.isAgentNull(p);
 		Assert.isSameEmail(email, p.getEmail());
 
@@ -62,7 +62,7 @@ public class ChangeInfoHTMLController {
 
 		// Mensaje a mostrar en HTML
 		model.addAttribute("info", "Email actualizado correctamente");
-		return "datosParticipant";
+		return "datosAgent";
 	}
 	
 	@RequestMapping(value = "/confirmNombre", method = RequestMethod.POST)
@@ -70,7 +70,7 @@ public class ChangeInfoHTMLController {
 		Assert.isNombreEmpty(nombre);
 
 		// Agente que se ha logeado antes
-		Agent p = (Agent) session.getAttribute("participant");
+		Agent p = (Agent) session.getAttribute("agent");
 		Assert.isAgentNull(p);
 		Assert.isSameEmail(nombre, p.getNombre());
 
@@ -79,7 +79,7 @@ public class ChangeInfoHTMLController {
 
 		// Mensaje a mostrar en HTML
 		model.addAttribute("info", "nombre actualizado correctamente");
-		return "datosParticipant";
+		return "datosAgent";
 	}
 	
 	@RequestMapping(value = "/confirmLocalizacion", method = RequestMethod.POST)
@@ -89,7 +89,7 @@ public class ChangeInfoHTMLController {
 		//Assert.isLocalizacionEmpty(localizacion);
 
 		// Agente que se ha logeado antes
-		Agent p = (Agent) session.getAttribute("participant");
+		Agent p = (Agent) session.getAttribute("agent");
 		Assert.isAgentNull(p);
 		Assert.isSameLocalizacion(localizacion, p.getNombre());
 
@@ -98,7 +98,7 @@ public class ChangeInfoHTMLController {
 
 		// Mensaje a mostrar en HTML
 		model.addAttribute("info", "localizacion actualizada correctamente");
-		return "datosParticipant";
+		return "datosAgent";
 	}
 
 	@ExceptionHandler(ErrorResponse.class)
