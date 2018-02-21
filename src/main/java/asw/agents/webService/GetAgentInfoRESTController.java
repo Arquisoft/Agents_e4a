@@ -23,11 +23,11 @@ import asw.dbManagement.model.Agent;
 public class GetAgentInfoRESTController implements GetAgentInfo {
 
 	@Autowired
-	private GetAgentImpl getParticipant;
+	private GetAgentImpl getAgent;
 	
 	@RequestMapping("/mark/list")
 	public String getList(Model model){
-		return getParticipant.getAgents().toString();
+		return getAgent.getAgents().toString();
 	}
 
 	@Override
@@ -39,12 +39,12 @@ public class GetAgentInfoRESTController implements GetAgentInfo {
 		Assert.isPasswordEmpty(peticion.getPassword());
 		Assert.isKindEmpty(peticion.getKind());
 
-		Agent participant = getParticipant.getAgent(peticion.getLogin());
+		Agent agent = getAgent.getAgent(peticion.getLogin());
 
-		Assert.isAgentNull(participant);
+		Assert.isAgentNull(agent);
 
-		Assert.isPasswordCorrect(peticion.getPassword(), participant);
-		Assert.isKindCorrect(peticion.getKind(), participant);
+		Assert.isPasswordCorrect(peticion.getPassword(), agent);
+		Assert.isKindCorrect(peticion.getKind(), agent);
 
 
 		/*
@@ -52,7 +52,7 @@ public class GetAgentInfoRESTController implements GetAgentInfo {
 		 * html: datosParticipant
 		 */
 
-		return new ResponseEntity<RespuestaInfoREST>(new RespuestaInfoREST(participant), HttpStatus.OK);
+		return new ResponseEntity<RespuestaInfoREST>(new RespuestaInfoREST(agent), HttpStatus.OK);
 	}
 
 	@ExceptionHandler(ErrorResponse.class)
