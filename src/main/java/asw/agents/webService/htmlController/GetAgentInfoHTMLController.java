@@ -43,9 +43,9 @@ public class GetAgentInfoHTMLController {
 		Assert.isPasswordCorrect(password, agente);
 		Assert.isKindCorrect(kind, agente);
 
-		session.setAttribute("participant", agente);
+		session.setAttribute("agent", agente);
 
-		return "datosParticipant";
+		return "datosAgent";
 	}
 
 	@ExceptionHandler(ErrorResponse.class)

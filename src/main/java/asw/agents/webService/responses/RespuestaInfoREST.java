@@ -5,7 +5,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 import asw.dbManagement.model.Agent;
 
-@XmlRootElement(name = "participant")
+@XmlRootElement(name = "agent")
 public class RespuestaInfoREST {	
 	
 	private String name;
@@ -17,13 +17,13 @@ public class RespuestaInfoREST {
 	
 	public RespuestaInfoREST() {}
 	
-	public RespuestaInfoREST(Agent participant){
-		setName(participant.getNombre());
-		setLocation(participant.getLocalizacion());
-		setEmail(participant.getEmail());
-		setId(participant.getIdentificador());
-		setKind(participant.getKind());
-		setKindCode(participant.getTipoCode());
+	public RespuestaInfoREST(Agent agent){
+		setName(agent.getNombre());
+		setLocation(agent.getLocalizacion());
+		setEmail(agent.getEmail());
+		setId(agent.getIdentificador());
+		setKind(agent.getKind());
+		setKindCode(agent.getTipoCode());
 	}
 
 
