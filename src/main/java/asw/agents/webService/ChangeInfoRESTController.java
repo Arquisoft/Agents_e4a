@@ -26,7 +26,7 @@ import asw.dbManagement.model.Agent;
 public class ChangeInfoRESTController implements ChangeInfo {
 
 	@Autowired
-	private GetAgentImpl getParticipant;
+	private GetAgentImpl getAgent;
 	@Autowired
 	private UpdateInfo updateInfo;
 
@@ -45,7 +45,7 @@ public class ChangeInfoRESTController implements ChangeInfo {
 		
 		Assert.isSamePassword(password, newPassword);	
 
-		Agent p = getParticipant.getAgent(login);
+		Agent p = getAgent.getAgent(login);
 		Assert.isAgentNull(p);
 		Assert.isPasswordCorrect(password, p);
 
@@ -73,7 +73,7 @@ public class ChangeInfoRESTController implements ChangeInfo {
 
 		Assert.isPasswordEmpty(password);
 		
-		Agent p = getParticipant.getAgent(email);
+		Agent p = getAgent.getAgent(email);
 		Assert.isAgentNull(p);
 		Assert.isPasswordCorrect(password, p);
 		
@@ -105,7 +105,7 @@ public class ChangeInfoRESTController implements ChangeInfo {
 
 		Assert.isPasswordEmpty(password);
 		
-		Agent p = getParticipant.getAgent(nombre);
+		Agent p = getAgent.getAgent(nombre);
 		Assert.isAgentNull(p);
 		Assert.isPasswordCorrect(password, p);
 		
@@ -133,7 +133,7 @@ public class ChangeInfoRESTController implements ChangeInfo {
 
 		Assert.isPasswordEmpty(password);
 		
-		Agent p = getParticipant.getAgent(localizacion);
+		Agent p = getAgent.getAgent(localizacion);
 		Assert.isAgentNull(p);
 		Assert.isPasswordCorrect(password, p);
 		
