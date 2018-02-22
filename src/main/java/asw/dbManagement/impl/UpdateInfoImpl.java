@@ -57,7 +57,9 @@ public class UpdateInfoImpl implements UpdateInfo {
 		}
 		
 	}
-
+/**
+ * Método para actualizar la localizacion del agente
+ */
 	@Override
 	public void updateLocalizacion(Agent agente, String nuevaLocalizacion) {
 		if(nuevaLocalizacion != null){
