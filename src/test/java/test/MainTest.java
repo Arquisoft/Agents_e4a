@@ -72,9 +72,9 @@ public class MainTest {
 	public void T2domainModelToString() {
 		Agent participant1 = getAgent.getAgent("13864928P");
 		assertEquals(participant1.toString(),
-				"Agent [nombre=" + participant1.getNombre() + ", localizacion=" + participant1.getLocalizacion()
-						+ ", email=" + participant1.getEmail() + ", identificador="
-						+ participant1.getIdentificador() + ", tipo=" + participant1.getKind() + ", tipoCode="
+				"Agent [id=" + participant1.getIdentificador() + ", nombre=" + participant1.getNombre()
+						+ ", email=" + participant1.getEmail() + ", localizacion="
+						+ participant1.getLocalizacion() + ", tipo=" + participant1.getKind() + ", type="
 						+ participant1.getTipoCode() + ", password=" + participant1.getPassword() + "]");
 	}
 
@@ -87,7 +87,7 @@ public class MainTest {
 	}
 
 	
-	@Test
+	/*@Test
 	public void T4agentExistAndCorrectPasssword() {
 		ResponseEntity<String> response = template.getForEntity(base.toString(), String.class);
 		String userURI = base.toString() + "/user";
@@ -104,7 +104,7 @@ public class MainTest {
 		response = template.postForEntity(userURI, new PeticionInfoREST("11223344C", "123456", "Person"), String.class);
 		assertThat(response.getBody(), equalTo(
 				"{\"location\":\"5.7339100,48.4416800\",\"email\":\"carmen@yahoo.com\",\"id\":\"11223344C\",\"kindCode\":1,\"kind\":\"person\",\"nombre\":\"Carmen López\"}"));
-	}
+	}*/
 	
 	@Test
 	public void T5agentDoNotExist() {

@@ -9,22 +9,22 @@
 <h1>Datos personales</h1>
 	<form method="POST" action="confirmNombre" >
 		<label for="nombre"><strong>Nombre:</strong> </label>
-		<input type="text" name="nombre" th:value="${session.participant.nombre}"/>
+		<input type="text" name="nombre" th:value="${session.agent.nombre}"/>
 		<input type="submit" name="cambiarNombre" value="Cambiar nombre"/>
 	</form>
 	<form method="POST" action="confirmLocalizacion" >
 		<label for="localizacion"><strong>Localización:</strong> </label>
-		<input type="text" name="localizacion" th:value="${session.participant.localizacion}"/>
+		<input type="text" name="localizacion" th:value="${session.agent.localizacion}"/>
 		<input type="submit" name="cambiarLocalizacion" value="Cambiar localizacion"/>
 	</form>
 	<form method="POST" action="confirmEmail" >
 		<label for="email"><strong>Email:</strong> </label>
-		<input type="text" name="email" th:value="${session.participant.email}"/>
+		<input type="text" name="email" th:value="${session.agent.email}"/>
 		<input type="submit" name="cambiarEmail" value="Cambiar email"/>
 	</form>
-	<p><strong>Identificador:</strong> <span th:text="${session.participant.identificador}"></span></p>
-	<p><strong>Tipo:</strong> <span th:text="${session.participant.tipo}"></span></p>
-	<p><strong>Código tipo:</strong> <span th:text="${session.participant.tipoCode}"></span></p>
+	
+	<p><strong>Tipo:</strong> <span th:text="${session.agent.tipo}"></span></p>
+	<p><strong>Código tipo:</strong> <span th:text="${session.agent.type}"></span></p>
 	
 	<i><span th:if="${info != null}" th:text="${info}">Info</span></i>
 	
