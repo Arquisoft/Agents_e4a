@@ -7,6 +7,24 @@
 </head>
 <body>
 <h1>Registrar Agente</h1>
-
+<form method="POST" action="comprobarAgente" >
+	<table>
+		<tr>
+			<td><strong><label for="password">Nombre: </label></strong></td>
+			<td><input type="text" name="nombre" /></td>
+		</tr>
+		<tr>
+			<td><strong><label for="password">Localización: </label></strong></td>
+			<td><input type="text" name="localizacion" /></td>
+		</tr>
+		<tr>
+			<td><strong><label for="password">Email: </label></strong></td>
+			<td><input type="text" name="email" /></td>
+		</tr>
+	</table>
+	<form method="POST" action="anadirAgent" >
+		<input type="submit" name="anadirAgent" value="Añadir"/>
+	</form>
+</form>
 </body>
 </html>
