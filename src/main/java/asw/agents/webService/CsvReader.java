@@ -3,13 +3,10 @@ package asw.agents.webService;
 
  
 import java.io.BufferedReader; 
-import java.io.FileNotFoundException;
 import java.io.FileReader; 
 import java.io.IOException; 
 import java.util.Collection; 
-import java.util.HashMap; 
-import java.util.List; 
-import java.util.logging.Level;
+import java.util.HashMap;
  
 import asw.dbManagement.model.Agent;
  

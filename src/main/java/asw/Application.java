@@ -6,13 +6,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
 import asw.agents.webService.CsvReader;
-import asw.dbManagement.model.Agent;
-import asw.dbManagement.repository.AgentRepository;
-
-import java.text.ParseException;
-
-import org.springframework.boot.CommandLineRunner;
-import org.springframework.context.annotation.Bean;
 
 @EnableAutoConfiguration
 @ComponentScan
