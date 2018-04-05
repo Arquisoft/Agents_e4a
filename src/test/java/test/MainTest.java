@@ -472,13 +472,57 @@ public class MainTest {
 
 		response = template.getForEntity(userURI, String.class);
 		assertThat(response.getBody().replace(" ", "").replace("\n", "").replace("\t", ""),
-				equalTo(new String("<!DOCTYPEHTML><html><head><metacharset=\"UTF-8\"/><title>Login</title></head><body>"
-						+ "<h1>Acceso</h1><formmethod=\"POST\"action=\"login\"><table><tr><td><labelfor=\"login\">"
-						+ "<strong>Login:</strong></label></td><td><inputtype=\"text\"id=\"login\"name=\"login\"/>"
-						+ "</td></tr><tr><td><labelfor=\"password\"><strong>Password:</strong></label></td><td>"
-						+ "<inputtype=\"password\"id=\"password\"name=\"password\"/></td></tr><tr><td><labelfor=\"kind\">"
-						+ "<strong>Kind:</strong></label></td><td><inputtype=\"text\"id=\"kind\"name=\"kind\"/></td></tr><tr><td><buttontype="
-						+ "\"submit\"id=\"login\">Entrar</button></td></tr></table></form></body></html>").replace(" ",
+				equalTo(new String("<!DOCTYPE HTML>" + 
+						"<html>" +
+						"<head>" + 
+						"<meta charset=\"UTF-8\"/>" + 
+						"<link rel=\"stylesheet\" type=\"text/css\" href=\"../static/css/style.css\"/>" + 
+						"<link rel=\"stylesheet\" type=\"text/css\" href=\"../static/css/footer.css\"/>" + 
+						"<link rel=\"stylesheet\" type=\"text/css\" href=\"../static/css/sketchy.css\"/>" + 
+						"<script src=\"../static/script/popper.min.js\"></script>" + 
+						"<script src=\"../static/script/bootstrap.min.js\"></script>" + 
+						"<title>Login</title>" + 
+						"</head>" +
+						"<body>" + 
+						"<main class=\"container\">" + 
+						"<h1>Acceso</h1>" + 
+						"<form method=\"POST\" action=\"login\" class=\"form-horizontal\">" + 
+						"<fieldset>" + 
+						"<div class=\"form-group\">" + 
+						"<label class=\"control-label col-sm-2\" for=\"login\">Login</label>" + 
+						"<div class=\"col-sm-10\">" + 
+						"<input type=\"text\" class=\"form-control\" name=\"login\" id=\"login\" placeholder=\"DNI\" required=\"required\" />" + 
+						"</div>" + 
+						"</div>" + 
+						"<div class=\"form-group\">" + 
+						"<label class=\"control-label col-sm-2\" for=\"password\">Password</label>" + 
+						"<div class=\"col-sm-10\">" + 
+						"<input type=\"password\" class=\"form-control\" name=\"password\" id=\"password\" placeholder=\"password\" required=\"required\" />" + 
+						"</div>" + 
+						"</div>" + 
+						"<div class=\"form-group\">" + 
+						"<label class=\"control-label col-sm-2\" for=\"kind\">Kind</label>" + 
+						"<div class=\"col-sm-10\">" + 
+						"<input type=\"text\" class=\"form-control\" name=\"kind\" id=\"kind\" placeholder=\"Person\" required=\"required\" />" + 
+						"</div>" + 
+						"</div>" + 
+						"<div class=\"form-group\">" + 
+						"<div class=\"col-sm-offset-2 col-sm-10\">" + 
+						"<button type=\"submit\" id=\"login\" class=\"btn btn-primary\">Entrar</button>" + 
+						"</div>" + 
+						"</div>" + 
+						"</fieldset>" + 
+						"</form>" + 
+						"</main>" + 
+						"</body>" + 
+						"<footer>" + 
+						"<address>" + 
+						"<p>" + 
+						"<span>Repositorio</span>: <a href="+"\""+"https://github.com/Arquisoft/Agents_e4a"+"\""+">Agents_e4a</a>" + 
+						"</p>" + 
+						"</address>" + 
+						"</footer>" + 
+						"</html>").replace(" ",
 								"")));
 
 	}

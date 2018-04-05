@@ -28,7 +28,6 @@ public class GetAgentInfoHTMLController {
 		return "login";
 	}
 	
-
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public String getLogin(HttpSession session, @RequestParam String login, @RequestParam String password, @RequestParam String kind,
 			Model model) {
