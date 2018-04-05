@@ -24,7 +24,7 @@ public class Agent implements Serializable{
 	private String email;	
 	private String localizacion;
 	@Transient
-	public String tipo;
+	private String tipo;
 	private int type;
 	private String password;
 
