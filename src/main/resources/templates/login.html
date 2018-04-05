@@ -2,28 +2,55 @@
 <html>
 <head>
  	<meta charset="UTF-8"/>
+ 	<link rel="stylesheet" type="text/css" href="/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="/css/footer.css" />
+    <link rel="stylesheet" type="text/css" href="/css/sketchy.css" />
+    <script src="/script/popper.min.js"></script>
+    <script src="/script/bootstrap.min.js"></script>
  	<title>Login</title>
 </head>
 <body>
-<h1>Acceso</h1>
-<form method="POST" action="login" >
-	<table>
-		<tr>
-			<td><label for="login"><strong>Login:</strong> </label></td>
-			<td><input type="text" id="login" name="login"/></td>
-		</tr>
-		<tr>
-			<td><label for="password"><strong>Password:</strong> </label></td>
-			<td><input type="password" id="password" name="password" /></td>
-		</tr>
-		<tr>
-			<td><label for="kind"><strong>Kind:</strong> </label></td>
-			<td><input type="text" id="kind" name="kind" /></td>
-		</tr>
-		<tr>
-			<td><button type="submit" id="login">Entrar</button></td>
-		</tr>
-	</table>
-</form>
+	<main class="container">
+		<h1>Acceso</h1>
+		<form method="POST" action="login" class="form-horizontal">
+		
+		<fieldset>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="login">Login</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" name="login" id="login" placeholder="DNI" required="required"/>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="password">Password</label>
+                <div class="col-sm-10">
+                    <input type="password" class="form-control" name="password" id="password" placeholder="password" required="required"/>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="kind">Kind</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" name="kind" id="kind" placeholder="Person" required="required"/>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" id="login" class="btn btn-primary">Entrar</button>
+                </div>
+            </div>
+        </fieldset>
+            
+        </form>
+    </main>
 </body>
+<footer>
+    <address>
+		<p>
+			<span>Repositorio</span>: <a href=https://github.com/Arquisoft/Agents_e4a>Agents_e4a</a>
+		</p>
+	</address>
+</footer>
 </html>
