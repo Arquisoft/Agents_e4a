@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+ 	<meta charset="UTF-8"/>
+ 	<title>Información Personal</title>
+</head>
+<body>
+<h1>Datos personales</h1>
+	<form method="POST" action="confirmNombre" >
+		<label for="nombre"><strong>Nombre:</strong> </label>
+		<label name="nombre" th:value="${session.agent.nombre}"/>
+	</form>
+	<form method="POST" action="confirmLocalizacion" >
+		<label for="localizacion"><strong>Localización:</strong> </label>
+		<label type="text" name="localizacion" th:value="${session.agent.localizacion}"/>
+	</form>
+	<form method="POST" action="confirmEmail" >
+		<label for="email"><strong>Email:</strong> </label>
+		<label type="text" name="email" th:value="${session.agent.email}"/>
+		
+	</form>
+	<p><strong>Código tipo:</strong> <span th:text="${session.agent.type}"></span></p>
+	
+	<i><span th:if="${info != null}" th:text="${info}">Info</span></i>
+	
+	<br/>
+	<br/>
+	<form method="POST" action="changeInfo" >
+		<input type="submit" name="cambiarDatos" value="Cambiar datos"/>
+	</form>
+</body>
+</html>
