@@ -182,6 +182,15 @@ public class Assert {
 		if(!locSplit[1].matches("-?\\d+(\\.\\d+)?")){
 			throw ErrorFactory.getError(Errors.WRONG_LOCALIZATION_STYLE);
 		}
+		
+		if(locSplit[0].matches("[a-zA-ZÑñ]")){
+			throw ErrorFactory.getError(Errors.WRONG_LOCALIZATION_STYLE);
+		}
+		
+		if(locSplit[1].matches("[a-zA-ZÑñ]")){
+			throw ErrorFactory.getError(Errors.WRONG_LOCALIZATION_STYLE);
+		}
+		
 		return true;
 	}
 	
