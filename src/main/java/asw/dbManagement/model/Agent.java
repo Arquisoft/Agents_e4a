@@ -39,19 +39,18 @@ public class Agent implements Serializable{
 		 * Constructor
 		 * 
 		 * @param nombre
-		 * @param localizacion
 		 * @param email
-		 * @param identificador
-		 * @param tipo
-		 * @param kindCode
+		 * @param localizacion 
+		 * @param kindCode	
+		 * @param identificador	 
 		 * @param password
 		 */		
-		public Agent(String nombre, String email, String localizacion, int tipoCode,  String identificador, String password) {
+		public Agent(String nombre, String email, String localizacion, int type,  String identificador, String password) {
 			super();			
 			this.nombre = nombre;
 			this.email = email;
 			this.localizacion=localizacion;
-			this.type = tipoCode;
+			this.type = type;
 			this.id = identificador;
 			this.password = password;
 		}

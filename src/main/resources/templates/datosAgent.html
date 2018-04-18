@@ -1,36 +1,108 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/head">
+<body class="fixed-nav sticky-footer bg-dark" id="page-top">
+	<nav th:replace="fragments/nav" />
 
-<head>
- 	<meta charset="UTF-8"/>
- 	<title>Datos personales</title>
-</head>
-<body>
-<h1>Datos personales</h1>
-	<form method="POST" action="confirmNombre" >
-		<label for="nombre"><strong>Nombre:</strong> </label>
-		<input type="text" name="nombre" th:value="${session.agent.nombre}"/>
-		<input type="submit" name="cambiarNombre" value="Cambiar nombre"/>
-	</form>
-	<form method="POST" action="confirmLocalizacion" >
-		<label for="localizacion"><strong>Localización:</strong> </label>
-		<input type="text" name="localizacion" th:value="${session.agent.localizacion}"/>
-		<input type="submit" name="cambiarLocalizacion" value="Cambiar localizacion"/>
-	</form>
-	<form method="POST" action="confirmEmail" >
-		<label for="email"><strong>Email:</strong> </label>
-		<input type="text" name="email" th:value="${session.agent.email}"/>
-		<input type="submit" name="cambiarEmail" value="Cambiar email"/>
-	</form>
-	
-	<p><strong>Código tipo:</strong> <span th:text="${session.agent.type}"></span></p>
-	
-	<i><span th:if="${info != null}" th:text="${info}">Info</span></i>
-	
-	<br/>
-	<br/>
-	<form method="POST" action="changeInfo" >
-		<input type="submit" name="cambiarContraseña" value="Cambiar contraseña"/>
-	</form>
+	<div class="content-wrapper">
+		<div class="container-fluid">
+			<ol class="breadcrumb">
+				<li class="breadcrumb-item"><a href="index.html">Agents</a></li>
+				<li class="breadcrumb-item active">Datos del agente</li>
+			</ol>
+
+			<div class="row">
+				<form method="POST" action="confirmNombre">
+					<div class="col-sm">
+						<label for="nombre"> <strong>Nombre:</strong>
+						</label>
+					</div>
+					<div class="col-sm">
+						<div class="row">
+							<div class="col-6">
+								<input class="form-control custom-text" type="text" name="nombre"
+									th:value="${session.agent.nombre}" />
+							</div>
+							<div class="col-6">
+								<input class="btn custom-btn" type="submit"
+									name="cambiarNombre" value="Cambiar nombre" />
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+
+			<div class="form-group">
+				<div class="row">
+					<form method="POST" action="confirmLocalizacion">
+						<div class="col-sm">
+							<label for="localizacion"> <strong>Localización:</strong>
+							</label>
+						</div>
+						<div class="col-sm">
+							<div class="row">
+								<div class="col-6">
+									<input class="form-control custom-text" type="text"
+										name="localizacion" th:value="${session.agent.localizacion}" />
+								</div>
+								<div class="col-6">
+									<input class="btn custom-btn" type="submit"
+										name="cambiarLocalizacion" value="Cambiar localizacion" />
+								</div>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<div class="row">
+					<form method="POST" action="confirmEmail">
+						<div class="col-sm">
+							<label for="email"> <strong>Email:</strong>
+							</label>
+						</div>
+						<div class="col-sm">
+							<div class="row">
+								<div class="col-6">
+									<input class="form-control custom-text" type="text" name="email"
+										th:value="${session.agent.email}" />
+								</div>
+								<div class="col-6">
+									<input class="btn custom-btn" type="submit"
+										name="cambiarEmail" value="Cambiar email" />
+								</div>
+							</div>
+						</div>
+					</form>
+				</div>
+
+				<p>
+					<strong>Código tipo:</strong> <span th:text="${session.agent.type}"></span>
+				</p>
+			</div>
+
+			<i> <span th:if="${info != null}" th:text="${info}">Info</span>
+			</i> <br /> <br />
+			<form method="POST" action="changeInfo">
+				<input type="submit" name="cambiarContraseña"
+					value="Cambiar contraseña" />
+			</form>
+		</div>
+
+	</div>
+	<footer class="sticky-footer">
+		<div class="container">
+			<div class="text-center">
+				<small>Copyright © Agents_e4a 2018</small>
+			</div>
+		</div>
+	</footer>
+	<script src="/assets/vendor/jquery/jquery.min.js"></script>
+	<script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+	<!-- Core plugin JavaScript-->
+	<script src="/assets/vendor/jquery-easing/jquery.easing.min.js"></script>
+	<!-- Custom scripts for all pages-->
+	<script src="/assets/js/sb-admin.min.js"></script>
 </body>
 </html>

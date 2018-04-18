@@ -1,20 +1,16 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
-
-<head>
- 	<meta charset="UTF-8"/>
- 	<title>Cambiar contraseña</title>
-</head>
+<head th:replace="fragments/head" />
 <body>
-<h1>Cambiar contraseña</h1>
+<h1>Cambiar contrase�a</h1>
 <form method="POST" action="confirmPassword" >
 	<table>
 		<tr>
-			<td><strong><label for="password">Contraseña: </label></strong></td>
+			<td><strong><label for="password">Contrase�a: </label></strong></td>
 			<td><input type="password" name="password" /></td>
 		</tr>
 		<tr>
-			<td><strong><label for="newPassword">Nueva contraseña: </label></strong></td>
+			<td><strong><label for="newPassword">Nueva contrase�a: </label></strong></td>
 			<td><input type="password" name="newPassword"/></td>
 		</tr>
 		<tr>

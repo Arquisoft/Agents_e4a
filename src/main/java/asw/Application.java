@@ -1,11 +1,16 @@
 package asw;
 
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 
 import asw.agents.webService.CsvReader;
+import asw.dbManagement.model.Agent;
+import asw.dbManagement.repository.AgentRepository;
+import groovyjarjarcommonscli.ParseException;
 
 @EnableAutoConfiguration
 @ComponentScan
@@ -19,7 +24,7 @@ public class Application {
 		SpringApplication.run(Application.class, args);
 	}
 
-	/*@Bean
+	@Bean
 	public CommandLineRunner initDB(AgentRepository repository) throws ParseException {
 		
 		
@@ -39,5 +44,5 @@ public class Application {
 			repository.save(new Agent("Carmen López", "carmen@yahoo.com", "5.7339100,48.4416800", 1, "11223344C", "123456"));
 			
 		};
-	}*/
+	}
 }
