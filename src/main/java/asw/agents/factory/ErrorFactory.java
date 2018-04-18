@@ -18,33 +18,30 @@ import asw.agents.webService.responses.errors.UserNotFoundResponse;
 import asw.agents.webService.responses.errors.WrongDNIStyleErrorResponse;
 import asw.agents.webService.responses.errors.WrongEmailStyleErrorResponse;
 import asw.agents.webService.responses.errors.WrongLocationStyleErrorResponse;
+import asw.dbManagement.model.Agent;
 
 //Creacion de los distintos tipos de error.
 public class ErrorFactory {
 
 	public static enum Errors {
-		INCORRECT_PASSWORD,
-		WRONG_LOCALIZATION_STYLE,
-		REQUIRED_EMAIL,
-		REQUIRED_PASSWORD,
-		USER_NOT_FOUND,
-		WRONG_EMAIL_STYLE,
-		INCORRECT_PASSWORD_DO_NOT_MATCH,
-		SAME_EMAIL,
-		REQUIRED_LOGIN,
-		REQUIRED_KIND,
-		INCORRECT_KIND_DO_NOT_MATCH,
-		REQUIRED_NOMBRE,
-		SAME_NOMBRE,
-		REQUIRED_LOCALIZACION,
-		WRONG_DNI_STYLE,
-		SAME_LOCALIZACION
-		
+		INCORRECT_PASSWORD, WRONG_LOCALIZATION_STYLE, REQUIRED_EMAIL, REQUIRED_PASSWORD, USER_NOT_FOUND, WRONG_EMAIL_STYLE, INCORRECT_PASSWORD_DO_NOT_MATCH, SAME_EMAIL, REQUIRED_LOGIN, REQUIRED_KIND, INCORRECT_KIND_DO_NOT_MATCH, REQUIRED_NOMBRE, SAME_NOMBRE, REQUIRED_LOCALIZACION, WRONG_DNI_STYLE, SAME_LOCALIZACION
+
 	}
 
 	// Generar Constructor privado no queremos que se pueda tener varias
 	// instancias de la clase.
 	private ErrorFactory() {
+	}
+
+	public static ErrorResponse getError(Errors error, Agent agent) {
+		switch (error) {
+		case INCORRECT_KIND_DO_NOT_MATCH:
+			return new KindDoNotMatchErrorResponse(agent);
+		default:// en caso de no conocer el error.
+			return new UnknownErrorResponse();
+		}
+	
+		
 	}
 
 	public static ErrorResponse getError(Errors error) {
@@ -80,7 +77,7 @@ public class ErrorFactory {
 		case WRONG_DNI_STYLE:
 			return new WrongDNIStyleErrorResponse();
 		case SAME_LOCALIZACION:
-			return new SameLocalizacionErrorResponse();	
+			return new SameLocalizacionErrorResponse();
 		default:// en caso de no conocer el error.
 			return new UnknownErrorResponse();
 		}
