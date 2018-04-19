@@ -19,8 +19,6 @@ public class CsvReader {
 
  
   private CsvReader() { 
-    //this.loader = new ReadListExcel();
- 
   }
  
   public static CsvReader getInstance(String path) { 
@@ -89,11 +87,12 @@ public class CsvReader {
  
   }
  
-  public boolean checkType(String type, Agent agenteDeLaLey){ 
+  public boolean checkType(String type, Agent agenteDeLaLey){
       int typeNumeric = obtainType(type);
       if (typeNumeric==agenteDeLaLey.getTipoCode()){
-        return true; 
-      } 
+    	  if(agenteDeLaLey.getKind()==type)
+    		  return true; 
+      }
       return false;    
     } 
 }

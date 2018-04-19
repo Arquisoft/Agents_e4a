@@ -27,7 +27,6 @@ public class Application {
 	@Bean
 	public CommandLineRunner initDB(AgentRepository repository) throws ParseException {
 		
-		
 		return (args) -> {
 			
 			

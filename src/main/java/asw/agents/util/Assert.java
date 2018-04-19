@@ -236,14 +236,16 @@ public class Assert {
 	}
 
 	/**
-	 * Metodo que comprueba si el kind(tipo ) es correcto
+	 * Metodo que comprueba si el kind(tipo) es correcto
 	 * @param kind
 	 * @param agent
 	 * @return
 	 */
 	public static boolean isKindCorrect(String kind,Agent agent){
+		
 		if(!Application.instancia.checkType(kind, agent)) {
-			throw ErrorFactory.getError(Errors.INCORRECT_KIND_DO_NOT_MATCH);
+			throw ErrorFactory.getError(Errors.INCORRECT_KIND_DO_NOT_MATCH, agent);
+			
 		}
 		agent.setKind(kind.toLowerCase());
 		return true;
