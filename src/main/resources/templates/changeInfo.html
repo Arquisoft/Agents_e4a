@@ -1,22 +1,59 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
-<head th:replace="fragments/head" />
-<body>
-<h1>Cambiar contrase�a</h1>
-<form method="POST" action="confirmPassword" >
-	<table>
-		<tr>
-			<td><strong><label for="password">Contrase�a: </label></strong></td>
-			<td><input type="password" name="password" /></td>
-		</tr>
-		<tr>
-			<td><strong><label for="newPassword">Nueva contrase�a: </label></strong></td>
-			<td><input type="password" name="newPassword"/></td>
-		</tr>
-		<tr>
-			<td colspan="2"><input type="submit" name="confirmarCambio" value="Confirmar cambio"/></td>
-		</tr>
-	</table>
-</form>
+<head th:replace="fragments/head">
+<body class="fixed-nav sticky-footer bg-dark" id="page-top">
+	<nav th:replace="fragments/nav" />
+	<div class="content-wrapper">
+		<div class="container-fluid">
+			<ol class="breadcrumb">
+				<li class="breadcrumb-item">Agents</li>
+				<li class="breadcrumb-item"><a href=/login>LogIn</a></li>
+				<li class="breadcrumb-item"><a href=/index>Menu</a></li>
+				<li class="breadcrumb-item"><a href=/login>Datos del Agente</a></li>
+				<li class="breadcrumb-item active">Cambiar Contraseña</li>
+			</ol>
+			
+			<h1>Cambiar contraseña</h1>
+			
+		<div class="form-group">
+				<div class="row">
+					<form method="POST" action="confirmPassword">
+						<div class="col-sm">
+							<label for="password"> <strong>Contraseña:</strong>
+							</label>
+						</div>
+						<div class="col-sm">
+							<div class="row">
+								<div class="col-6">
+									<input class="form-control custom-text" type="password"
+										name="password"/>
+								</div>
+							</div>
+							<div class="col-sm">
+							<label for="newPassword"> <strong>Contraseña Nueva:</strong>
+							</label>
+						</div>
+						<div class="col-sm">
+							<div class="row">
+								<div class="col-6">
+									<input class="form-control custom-text" type="password"
+										name="newPassword"/>
+								</div>
+							</div>
+							<div class="col-6">
+									<input class="btn custom-btn" type="submit"
+									name="confirmarCambio" value="Confirmar cambio" />
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+			
 </body>
+<script src="/assets/vendor/jquery/jquery.min.js"></script>
+	<script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+	<!-- Core plugin JavaScript-->
+	<script src="/assets/vendor/jquery-easing/jquery.easing.min.js"></script>
+	<!-- Custom scripts for all pages-->
+	<script src="/assets/js/sb-admin.min.js"></script>
 </html>

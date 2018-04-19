@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/head">
+<body class="fixed-nav sticky-footer bg-dark" id="page-top">
+	<nav th:replace="fragments/nav" />
+	<div class="content-wrapper">
+		<div class="container-fluid">
+			<ol class="breadcrumb">
+			<li class="breadcrumb-item">Agents</li>
+				<li class="breadcrumb-item"><a href="/login">LogoIn</a></li>
+				<li class="breadcrumb-item active">Menu</li>
+			</ol>
+
+			<h1>Bienvenido<h1>
+										
+			<div class="col-6">
+				<label for="nombre" th:value="${session.agent.nombre}"></label>
+			</div>
+		</div>
+	</div>
+
+	<footer class="sticky-footer">
+		<div class="container">
+			<div class="text-center">
+				<small>Copyright © Agents_e4a 2018</small>
+			</div>
+		</div>
+	</footer>
+	<script src="/assets/vendor/jquery/jquery.min.js"></script>
+	<script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+	<!-- Core plugin JavaScript-->
+	<script src="/assets/vendor/jquery-easing/jquery.easing.min.js"></script>
+	<!-- Custom scripts for all pages-->
+	<script src="/assets/js/sb-admin.min.js"></script>
+</body>
+</html>
