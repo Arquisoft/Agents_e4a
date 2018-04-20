@@ -19,11 +19,11 @@ import asw.dbManagement.UpdateInfo;
 import asw.dbManagement.impl.GetAgentImpl;
 import asw.dbManagement.model.Agent;
 
-@RestController
+@Controller
 public class IndexHTMLController {
 	
 	@RequestMapping(value = "/index", method = RequestMethod.GET)
 	public String inicalicerLogin(Model model) {
-		return "hola";
+		return "index";
 	}
 }

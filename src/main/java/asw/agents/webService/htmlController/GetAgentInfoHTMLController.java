@@ -31,7 +31,6 @@ public class GetAgentInfoHTMLController {
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public String getLogin(HttpSession session, @RequestParam String login, @RequestParam String password, @RequestParam String kind,
 			Model model) {
-
 		Assert.isLoginEmpty(login);
 		Assert.isPasswordEmpty(password);
 		Assert.isKindEmpty(kind);
@@ -43,7 +42,13 @@ public class GetAgentInfoHTMLController {
 		Assert.isKindCorrect(kind, agente);
 
 		session.setAttribute("agent", agente);
+		
 
+		return "index";
+	}
+	@RequestMapping(value = "/datosAgent")
+	public String getAgentInfo(HttpSession session) {
+		
 		return "datosAgent";
 	}
 
