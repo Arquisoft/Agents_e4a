@@ -23,7 +23,7 @@ public class GetAgentInfoHTMLController {
 	@Autowired
 	private GetAgentImpl getAgent;
 
-	@RequestMapping(value = "/", method = RequestMethod.GET)
+	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public String inicalicerLogin(Model model) {
 		return "login";
 	}

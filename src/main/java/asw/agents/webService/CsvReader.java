@@ -90,7 +90,6 @@ public class CsvReader {
   public boolean checkType(String type, Agent agenteDeLaLey){
       int typeNumeric = obtainType(type);
       if (typeNumeric==agenteDeLaLey.getTipoCode()){
-    	  if(agenteDeLaLey.getKind()==type)
     		  return true; 
       }
       return false;    
