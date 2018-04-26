@@ -2,6 +2,7 @@ package asw.agents.webService.request;
 
 public class PeticionChangeEmailREST {
 
+	private String login;
 	private String email;
 	private String password;
 	private String newEmail;
@@ -10,11 +11,22 @@ public class PeticionChangeEmailREST {
 
 	}
 
-	public PeticionChangeEmailREST(String email, String password, String newEmail) {
+	public PeticionChangeEmailREST(String login, String email, String password, String newEmail) {
 		super();
+		this.login=login;
 		this.email = email;
 		this.password = password;
 		this.newEmail = newEmail;
+	}
+	
+	
+
+	public String getLogin() {
+		return login;
+	}
+
+	public void setLogin(String login) {
+		this.login = login;
 	}
 
 	public String getEmail() {

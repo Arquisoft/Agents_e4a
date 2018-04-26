@@ -24,11 +24,6 @@ public class GetAgentInfoRESTController implements GetAgentInfo {
 
 	@Autowired
 	private GetAgentImpl getAgent;
-	
-	@RequestMapping("/mark/list")
-	public String getList(Model model){
-		return getAgent.getAgents().toString();
-	}
 
 	@Override
 	@RequestMapping(value = "/user", method = RequestMethod.POST, headers = { "Accept=application/json",

@@ -59,9 +59,12 @@ public class ChangeInfoRESTController implements ChangeInfo {
 	@RequestMapping(value = "/changeEmail", method = RequestMethod.POST, headers = { "Accept=application/json",
 			"Accept=application/xml" }, produces = { "application/json", "text/xml" })
 	public ResponseEntity<RespuestaChangeInfoREST> changeEmail(@RequestBody(required = true) PeticionChangeEmailREST datos) {
+		String login = datos.getLogin();
 		String email = datos.getEmail();
 		String password = datos.getPassword();
 		String nuevoEmail = datos.getNewEmail();
+		
+		Assert.isLoginEmpty(login);
 		
 		Assert.isEmailEmpty(email);
 		Assert.isEmailValid(email);
@@ -73,7 +76,7 @@ public class ChangeInfoRESTController implements ChangeInfo {
 
 		Assert.isPasswordEmpty(password);
 		
-		Agent p = getAgent.getAgent(email);
+		Agent p = getAgent.getAgent(login);
 		Assert.isAgentNull(p);
 		Assert.isPasswordCorrect(password, p);
 		
@@ -93,19 +96,22 @@ public class ChangeInfoRESTController implements ChangeInfo {
 	@RequestMapping(value = "/changeNombre", method = RequestMethod.POST, headers = { "Accept=application/json",
 	"Accept=application/xml" }, produces = { "application/json", "text/xml" })
 	public ResponseEntity<RespuestaChangeInfoREST> changeNombre(@RequestBody(required = true)PeticionChangeNombreREST datos) {
+		String login = datos.getLogin();
 		String nombre = datos.getNombre();
 		String password = datos.getPassword();
 		String nuevoNombre = datos.getNuevoNombre();
 		
+		Assert.isLoginEmpty(login);
+		
 		Assert.isNombreEmpty(nombre);
 		
-		Assert.isEmailEmpty(nuevoNombre);
+		Assert.isNombreEmpty(nuevoNombre);
 		
 		Assert.isSameNombre(nombre, nuevoNombre);
 
 		Assert.isPasswordEmpty(password);
 		
-		Agent p = getAgent.getAgent(nombre);
+		Agent p = getAgent.getAgent(login);
 		Assert.isAgentNull(p);
 		Assert.isPasswordCorrect(password, p);
 		
@@ -119,23 +125,22 @@ public class ChangeInfoRESTController implements ChangeInfo {
 	@RequestMapping(value = "/changeLocalizacion", method = RequestMethod.POST, headers = { "Accept=application/json",
 	"Accept=application/xml" }, produces = { "application/json", "text/xml" })
 	public ResponseEntity<RespuestaChangeInfoREST> changeLocalizacion(@RequestBody(required = true)PeticionChangeLocalizacionREST datos) {
+		String login = datos.getLogin();
 		String localizacion = datos.getLocalizacion();
 		String password = datos.getPassword();
 		String nuevaLocalizacion = datos.getNuevaLocalizacion();
 		
-		
-		Assert.isLocalizacionValid(localizacion);
 		Assert.isLocalizacionValid(nuevaLocalizacion);
-		//Assert.isLocalizacionEmpty(localizacion);
-		//Assert.isLocalizacionEmpty(nuevaLocalizacion);
 		
 		Assert.isSameLocalizacion(localizacion, nuevaLocalizacion);
 
 		Assert.isPasswordEmpty(password);
 		
-		Agent p = getAgent.getAgent(localizacion);
+		Agent p = getAgent.getAgent(login);
 		Assert.isAgentNull(p);
 		Assert.isPasswordCorrect(password, p);
+		Assert.isLocalizacionCorrect(localizacion, p);
+		
 		
 		updateInfo.updateLocalizacion(p, nuevaLocalizacion);
 

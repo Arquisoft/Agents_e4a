@@ -44,7 +44,7 @@ public class GetAgentInfoHTMLController {
 		session.setAttribute("agent", agente);
 		
 
-		return "index";
+		return "redirect:/index";
 	}
 	@RequestMapping(value = "/datosAgent")
 	public String getAgentInfo(HttpSession session) {

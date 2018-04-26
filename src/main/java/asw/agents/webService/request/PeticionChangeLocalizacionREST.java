@@ -1,6 +1,7 @@
 package asw.agents.webService.request;
 
 public class PeticionChangeLocalizacionREST {
+	private String login;
 	private String localizacion;
 	private String password;
 	private String nuevaLocalizacion;
@@ -9,11 +10,20 @@ public class PeticionChangeLocalizacionREST {
 
 	}
 
-	public PeticionChangeLocalizacionREST(String localizacion, String password, String nuevaLocalizacion) {
+	public PeticionChangeLocalizacionREST(String login, String localizacion, String password, String nuevaLocalizacion) {
 		super();
+		this.login=login;
 		this.localizacion = localizacion;
 		this.password = password;
 		this.nuevaLocalizacion = nuevaLocalizacion;
+	}
+
+	public String getLogin() {
+		return login;
+	}
+
+	public void setLogin(String login) {
+		this.login = login;
 	}
 
 	public String getLocalizacion() {

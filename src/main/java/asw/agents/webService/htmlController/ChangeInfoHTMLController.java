@@ -48,7 +48,7 @@ public class ChangeInfoHTMLController {
 
 		// Mensaje a mostrar en HTML
 		model.addAttribute("info", "Contraseña actualizada correctamente");
-		return "datosAgent";
+		return "redirect:/datosAgent";
 	}
 	
 	@RequestMapping(value = "/confirmEmail", method = RequestMethod.POST)
@@ -66,7 +66,7 @@ public class ChangeInfoHTMLController {
 
 		// Mensaje a mostrar en HTML
 		model.addAttribute("info", "Email actualizado correctamente");
-		return "datosAgent";
+		return "redirect:/datosAgent";
 	}
 	
 	@RequestMapping(value = "/confirmNombre", method = RequestMethod.POST)
@@ -83,7 +83,7 @@ public class ChangeInfoHTMLController {
 
 		// Mensaje a mostrar en HTML
 		model.addAttribute("info", "nombre actualizado correctamente");
-		return "datosAgent";
+		return "redirect:/datosAgent";
 	}
 	
 	@RequestMapping(value = "/confirmLocalizacion", method = RequestMethod.POST)
@@ -102,7 +102,7 @@ public class ChangeInfoHTMLController {
 
 		// Mensaje a mostrar en HTML
 		model.addAttribute("info", "localizacion actualizada correctamente");
-		return "datosAgent";
+		return "redirect:/datosAgent";
 	}
 
 	@ExceptionHandler(ErrorResponse.class)

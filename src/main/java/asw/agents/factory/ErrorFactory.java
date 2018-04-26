@@ -18,7 +18,6 @@ import asw.agents.webService.responses.errors.UserNotFoundResponse;
 import asw.agents.webService.responses.errors.WrongDNIStyleErrorResponse;
 import asw.agents.webService.responses.errors.WrongEmailStyleErrorResponse;
 import asw.agents.webService.responses.errors.WrongLocationStyleErrorResponse;
-import asw.dbManagement.model.Agent;
 
 //Creacion de los distintos tipos de error.
 public class ErrorFactory {
@@ -31,17 +30,6 @@ public class ErrorFactory {
 	// Generar Constructor privado no queremos que se pueda tener varias
 	// instancias de la clase.
 	private ErrorFactory() {
-	}
-
-	public static ErrorResponse getError(Errors error, Agent agent) {
-		switch (error) {
-		case INCORRECT_KIND_DO_NOT_MATCH:
-			return new KindDoNotMatchErrorResponse(agent);
-		default:// en caso de no conocer el error.
-			return new UnknownErrorResponse();
-		}
-	
-		
 	}
 
 	public static ErrorResponse getError(Errors error) {
