@@ -26,8 +26,13 @@ public class ChangeInfoHTMLController {
 	@RequestMapping(value = "/changeInfo", method = RequestMethod.POST)
 	public String changeInfo(BindingResult result) {
 		if (result.hasErrors()) {
-			return "login";
+			return "redirect:/datosAgent";
 		}
+		return "changeInfo";
+	}
+	
+	@RequestMapping(value = "/confirmPassword", method = RequestMethod.GET)
+	public String changePassword(Model model) {
 		return "changeInfo";
 	}
 
