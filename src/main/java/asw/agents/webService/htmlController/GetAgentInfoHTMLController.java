@@ -24,7 +24,7 @@ public class GetAgentInfoHTMLController {
 	private GetAgentImpl getAgent;
 
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
-	public String inicalicerLogin(Model model) {
+	public String login(Model model) {
 		return "login";
 	}
 	
@@ -43,8 +43,7 @@ public class GetAgentInfoHTMLController {
 
 		session.setAttribute("agent", agente);
 		
-
-		return "index";
+		return "redirect:/index";
 	}
 	@RequestMapping(value = "/datosAgent")
 	public String getAgentInfo(HttpSession session) {

@@ -11,8 +11,7 @@ import asw.dbManagement.model.Agent;
 
 public class Assert {
 	
-	public static CsvReader instancia;
-	
+	public static CsvReader instancia;	
 
 	/**
 	 * Método que comprueba si el email está vaciio
@@ -30,19 +29,18 @@ public class Assert {
 	 * @param password
 	 * @return exception si esta vacio, false si no esta vacio
 	 */
-	
 	public static boolean isPasswordEmpty(String password) {
 		if(password.trim().isEmpty())
 			throw ErrorFactory.getError(Errors.REQUIRED_PASSWORD);
 		else
 			return false;
 	}
+	
 	/**
 	 * Método que comprueba si el nombre está vacio
 	 * @param nombre
 	 * @return excepcion si esta vacio, false si no esta vacio
 	 */
-	
 	public static boolean isNombreEmpty(String nombre) {
 		if(nombre.trim().isEmpty())
 			throw ErrorFactory.getError(Errors.REQUIRED_NOMBRE);
@@ -55,8 +53,6 @@ public class Assert {
 	 * @param email
 	 * @return true si es valido.
 	 */
-	
-	
 	public static boolean isEmailValid(String email) {
 		String[] mailSplit = email.split("@");
 		if (mailSplit.length != 2) {
@@ -194,6 +190,19 @@ public class Assert {
 		return true;
 	}
 	
+	/**
+	 * Método que comprueba si la localización corresponde al agente
+	 */
+	public static boolean isLocalizacionCorrect(String localizacion, Agent a) {
+		System.out.println(localizacion);
+		System.out.println(a.getLocalizacion());
+		if(!localizacion.equals(a.getLocalizacion())) {
+			System.out.println("CACAAAAA");
+			throw ErrorFactory.getError(Errors.WRONG_LOCALIZATION_STYLE);
+		}
+		return true;
+	}
+	
 	
 	/**
 	 * Comprueba si el Dni es correcto(Comprueba si la letra es acorde a los números). Los Dni actuales de los ejemplos no lo son.
@@ -242,9 +251,8 @@ public class Assert {
 	 * @return
 	 */
 	public static boolean isKindCorrect(String kind,Agent agent){
-		
 		if(!Application.instancia.checkType(kind, agent)) {
-			throw ErrorFactory.getError(Errors.INCORRECT_KIND_DO_NOT_MATCH, agent);
+			throw ErrorFactory.getError(Errors.INCORRECT_KIND_DO_NOT_MATCH);
 			
 		}
 		agent.setKind(kind.toLowerCase());
