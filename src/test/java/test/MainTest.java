@@ -37,9 +37,8 @@ import asw.dbManagement.impl.GetAgentImpl;
 import asw.dbManagement.model.Agent;
 
 
-@RunWith(SpringJUnit4ClassRunner.class)
+@RunWith(SpringRunner.class)
 @SpringBootTest(classes = Application.class)
-@WebAppConfiguration
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class MainTest {
 
