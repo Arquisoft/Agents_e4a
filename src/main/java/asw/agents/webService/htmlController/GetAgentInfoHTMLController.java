@@ -47,7 +47,9 @@ public class GetAgentInfoHTMLController {
 	}
 	@RequestMapping(value = "/datosAgent")
 	public String getAgentInfo(HttpSession session) {
-		
+		if(session.getAttribute("agent") == null) {
+			return "login";
+		}
 		return "datosAgent";
 	}
 

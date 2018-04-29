@@ -24,6 +24,7 @@ public class IndexHTMLController {
 	
 	@RequestMapping(value = "/index", method = RequestMethod.GET)
 	public String inicalicerLogin(Model model) {
+		
 		return "index";
 	}
 }
