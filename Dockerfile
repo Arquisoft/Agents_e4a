@@ -1,4 +1,4 @@
-FROM openjdk:8-jre-alpine
+FROM maven:3.5-jdk-8-alpine
 RUN mvn package -DskipTests
 COPY ./target/e4a_Agents-0.0.1.jar /usr/src/app/
 WORKDIR /usr/src/app
