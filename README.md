@@ -3,6 +3,7 @@
 [![Build Status](https://travis-ci.org/Arquisoft/Agents_e4a.svg?branch=master)](https://travis-ci.org/Arquisoft/Agents_e4a)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/f2f0d0b009384c8aba7deacb39b7b541)](https://www.codacy.com/app/Llambi/Agents_e4a?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Arquisoft/Agents_e4a&amp;utm_campaign=Badge_Grade)
 [![codecov](https://codecov.io/gh/Arquisoft/Agents_e4a/branch/master/graph/badge.svg)](https://codecov.io/gh/Arquisoft/Agents_e4a)
+[![Codefresh build status]( https://g.codefresh.io/api/badges/build?repoOwner=Arquisoft&repoName=Agents_e4a&branch=master&pipelineName=Agents_e4a&accountName=antonioalfa22&type=cf-1)]( https://g.codefresh.io/repositories/Arquisoft/Agents_e4a/builds?filter=trigger:build;branch:master;service:5aea07188c2e080001b41964~Agents_e4a)
 
 # Authors Originales
 
