@@ -1,4 +1,4 @@
-package asw.agents.webService.ChangeAgentInfo;
+package asw.agents.webService.changeAgentInfo;
 
 import javax.servlet.http.HttpSession;
 
