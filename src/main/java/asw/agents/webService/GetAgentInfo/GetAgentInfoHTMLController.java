@@ -1,4 +1,4 @@
-package asw.agents.webService.htmlController;
+package asw.agents.webService.GetAgentInfo;
 
 import javax.servlet.http.HttpSession;
 

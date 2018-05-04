@@ -1,4 +1,4 @@
-package asw.agents.webService;
+package asw.agents.webService.GetAgentInfo;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
